@@ -33,6 +33,46 @@
   </url>
   
   <url>
+    <loc>https://anttikuu.github.io/categories/</loc>
+    <lastmod>2019-11-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://anttikuu.github.io/tags/plot/</loc>
+    <lastmod>2019-11-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://anttikuu.github.io/post/</loc>
+    <lastmod>2019-11-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://anttikuu.github.io/categories/r/</loc>
+    <lastmod>2019-11-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://anttikuu.github.io/tags/r-markdown/</loc>
+    <lastmod>2019-11-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://anttikuu.github.io/tags/regression/</loc>
+    <lastmod>2019-11-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://anttikuu.github.io/tags/</loc>
+    <lastmod>2019-11-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://anttikuu.github.io/post/2019-11-09-test/2019-11-09-test/</loc>
+    <lastmod>2019-11-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://anttikuu.github.io/authors/admin/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url>
@@ -64,11 +104,6 @@
   
   <url>
     <loc>https://anttikuu.github.io/tags/source-themes/</loc>
-    <lastmod>2019-04-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://anttikuu.github.io/tags/</loc>
     <lastmod>2019-04-07T00:00:00+00:00</lastmod>
   </url>
   
@@ -133,20 +168,7 @@
   </url>
   
   <url>
-    <loc>https://anttikuu.github.io/post/2019-11-09-test/2019-11-09-test/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://anttikuu.github.io/categories/</loc>
-  </url>
-  
-  <url>
     <loc>https://anttikuu.github.io/courses/</loc>
-  </url>
-  
-  <url>
-    <loc>https://anttikuu.github.io/post/</loc>
   </url>
   
 </urlset>

@@ -5,12 +5,36 @@
     <link>https://anttikuu.github.io/tags/</link>
       <atom:link href="https://anttikuu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2019</copyright><lastBuildDate>Sun, 07 Apr 2019 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2019</copyright><lastBuildDate>Sat, 09 Nov 2019 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://anttikuu.github.io/img/icon-192.png</url>
       <title>Tags</title>
       <link>https://anttikuu.github.io/tags/</link>
     </image>
+    
+    <item>
+      <title>plot</title>
+      <link>https://anttikuu.github.io/tags/plot/</link>
+      <pubDate>Sat, 09 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://anttikuu.github.io/tags/plot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>R Markdown</title>
+      <link>https://anttikuu.github.io/tags/r-markdown/</link>
+      <pubDate>Sat, 09 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://anttikuu.github.io/tags/r-markdown/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>regression</title>
+      <link>https://anttikuu.github.io/tags/regression/</link>
+      <pubDate>Sat, 09 Nov 2019 00:00:00 +0000</pubDate>
+      <guid>https://anttikuu.github.io/tags/regression/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Source Themes</title>
