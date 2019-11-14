@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors | Antti Kuusinen</title>
-    <link>https://anttikuusinen.github.io/authors/</link>
-      <atom:link href="https://anttikuusinen.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
+    <link>/authors/</link>
+      <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2019</copyright><lastBuildDate>Sun, 07 Apr 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://anttikuusinen.github.io/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>Authors</title>
-      <link>https://anttikuusinen.github.io/authors/</link>
+      <link>/authors/</link>
     </image>
     
     <item>
       <title></title>
-      <link>https://anttikuusinen.github.io/authors/admin/</link>
+      <link>/authors/admin/</link>
       <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>https://anttikuusinen.github.io/authors/admin/</guid>
+      <guid>/authors/admin/</guid>
       <description>&lt;p&gt;Hi! I&amp;rsquo;m working as a postdoc at Aalto University Acoustics laboratory. My research deals with psychoacoustic phenomena concerning human perception of speech and music in reverberant spaces, including such aspects as listening effort and the effects of hearing impairment.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Robert Ford</title>
-      <link>https://anttikuusinen.github.io/authors/robert-ford/</link>
+      <link>/authors/robert-ford/</link>
       <pubDate>Tue, 01 Sep 2015 00:00:00 +0000</pubDate>
-      <guid>https://anttikuusinen.github.io/authors/robert-ford/</guid>
+      <guid>/authors/robert-ford/</guid>
       <description></description>
     </item>
     
