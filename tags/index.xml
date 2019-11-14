@@ -2,61 +2,61 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags | Antti Kuusinen</title>
-    <link>https://anttikuu.github.io/tags/</link>
-      <atom:link href="https://anttikuu.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://anttikuusinen.github.io/tags/</link>
+      <atom:link href="https://anttikuusinen.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2019</copyright><lastBuildDate>Sat, 09 Nov 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://anttikuu.github.io/img/icon-192.png</url>
+      <url>https://anttikuusinen.github.io/img/icon-192.png</url>
       <title>Tags</title>
-      <link>https://anttikuu.github.io/tags/</link>
+      <link>https://anttikuusinen.github.io/tags/</link>
     </image>
     
     <item>
       <title>plot</title>
-      <link>https://anttikuu.github.io/tags/plot/</link>
+      <link>https://anttikuusinen.github.io/tags/plot/</link>
       <pubDate>Sat, 09 Nov 2019 00:00:00 +0000</pubDate>
-      <guid>https://anttikuu.github.io/tags/plot/</guid>
+      <guid>https://anttikuusinen.github.io/tags/plot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R Markdown</title>
-      <link>https://anttikuu.github.io/tags/r-markdown/</link>
+      <link>https://anttikuusinen.github.io/tags/r-markdown/</link>
       <pubDate>Sat, 09 Nov 2019 00:00:00 +0000</pubDate>
-      <guid>https://anttikuu.github.io/tags/r-markdown/</guid>
+      <guid>https://anttikuusinen.github.io/tags/r-markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>regression</title>
-      <link>https://anttikuu.github.io/tags/regression/</link>
+      <link>https://anttikuusinen.github.io/tags/regression/</link>
       <pubDate>Sat, 09 Nov 2019 00:00:00 +0000</pubDate>
-      <guid>https://anttikuu.github.io/tags/regression/</guid>
+      <guid>https://anttikuusinen.github.io/tags/regression/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Source Themes</title>
-      <link>https://anttikuu.github.io/tags/source-themes/</link>
+      <link>https://anttikuusinen.github.io/tags/source-themes/</link>
       <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
-      <guid>https://anttikuu.github.io/tags/source-themes/</guid>
+      <guid>https://anttikuusinen.github.io/tags/source-themes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Deep Learning</title>
-      <link>https://anttikuu.github.io/tags/deep-learning/</link>
+      <link>https://anttikuusinen.github.io/tags/deep-learning/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://anttikuu.github.io/tags/deep-learning/</guid>
+      <guid>https://anttikuusinen.github.io/tags/deep-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Demo</title>
-      <link>https://anttikuu.github.io/tags/demo/</link>
+      <link>https://anttikuusinen.github.io/tags/demo/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>https://anttikuu.github.io/tags/demo/</guid>
+      <guid>https://anttikuusinen.github.io/tags/demo/</guid>
       <description></description>
     </item>
     
