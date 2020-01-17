@@ -232,7 +232,7 @@ theme(axis.title.y = element_text(size = 8)) + ggtitle(&amp;#39;Per music&amp;#3
 
 library(gridExtra) # for grid.arrange()
 grid.arrange(g1,g2,nrow = 1)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/2020-22-01-OnAnalysisOfCHMData/2020-22-01-OnAnalysisOfCHMData_files/figure-html/boxplots-1.png&#34; width=&#34;576&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../post/2020-22-01-onanalysisofchmdata/2020-22-01-onanalysisofchmdata_files/figure-html/boxplots-1.png&#34; width=&#34;576&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;Now we have the first view of our data. Note, that as expected with randomised data, the mean percentages of correct answers set nicely on the change level of 1/4 = 25 % as it should be.&lt;/p&gt;
 &lt;p&gt;With another dataset, one would be inclined to run a test, such as Kruskal-Wallis rank sum test (non-parametric one way anova by ranks) to test whether the distributions of the percentages of correct answers differ between the same and difference cases. Using the m1-data from above, one may run this e.g., by kruskal.test(x=m1$value, g=m1$samedifflist).&lt;/p&gt;
 &lt;p&gt;Now, besides just looking at the correct answers, we can look at the actual perceived halls (ANS column) versus the true (REF column) halls.&lt;/p&gt;
@@ -453,7 +453,7 @@ geom_text(aes(Response, Reference, label = value), color = &amp;quot;black&amp;q
 #gdiff
 
 grid.arrange(gsame,gdiff,nrow=1)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../../post/2020-22-01-OnAnalysisOfCHMData/2020-22-01-OnAnalysisOfCHMData_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../../post/2020-22-01-onanalysisofchmdata/2020-22-01-onanalysisofchmdata_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;So there we are! And we will stop for now with this simulated dataset.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;next-steps..&#34; class=&#34;section level3&#34;&gt;
