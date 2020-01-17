@@ -44,21 +44,5 @@
       <description></description>
     </item>
     
-    <item>
-      <title>plot</title>
-      <link>/tags/plot/</link>
-      <pubDate>Sat, 09 Nov 2019 00:00:00 +0000</pubDate>
-      <guid>/tags/plot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>regression</title>
-      <link>/tags/regression/</link>
-      <pubDate>Sat, 09 Nov 2019 00:00:00 +0000</pubDate>
-      <guid>/tags/regression/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>
