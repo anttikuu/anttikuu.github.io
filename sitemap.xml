@@ -34,7 +34,52 @@
   
   <url>
     <loc>/categories/</loc>
-    <lastmod>2019-11-09T00:00:00+00:00</lastmod>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/classification/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/confusion-matrix/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/data-analysis/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/data-preprocessing/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/2020-01-22-onanalysisofchmdata/2020-01-22-onanalysisofchmdata/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/r/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/r-markdown/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/tags/</loc>
+    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -48,27 +93,7 @@
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2019-11-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/r/</loc>
-    <lastmod>2019-11-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/r-markdown/</loc>
-    <lastmod>2019-11-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>/tags/regression/</loc>
-    <lastmod>2019-11-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
     <lastmod>2019-11-09T00:00:00+00:00</lastmod>
   </url>
   
