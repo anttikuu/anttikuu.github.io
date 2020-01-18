@@ -85,7 +85,7 @@ head(test)&lt;/code&gt;&lt;/pre&gt;
 ## 6 MH &amp;lt;NA&amp;gt;       0 13-Jan-2020 15:27:52         0   1&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;So this basically illustrates also the design matrix of the experiment; the different columns hold the variables, for instance, MUS_REF indicates the sound of the REF and MUS_COM that of the comparison samples. SAMEDIFF column indicates whether the MUS_REF and MUS_COM were the same or different sounds. REF and A-D shows the hall names behind the GUI buttond and the column ANS indicates the chosen response and CORRECT indicates whether the answer was correct (1) or not (0).&lt;br /&gt;
 (No need to worry about some of the columns, for instance, REP does not mean anything here as there were no repetitions.)&lt;/p&gt;
-&lt;p&gt;Then, a set of individual .csv -files can be read and bind to single data.frame as follows (For illustration purposes, now here is only 4 individual .csv files):&lt;/p&gt;
+&lt;p&gt;Then a set of individual .csv -files can be read and bind to single data.frame as follows (For illustration purposes, now here is only 4 individual .csv files):&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# LIST .csv files
 csvfiles = list.files(pattern = &amp;#39;.csv&amp;#39;)
 # Make an empty list
@@ -142,7 +142,7 @@ simdata &amp;lt;- read.table(&amp;quot;SIMDATA.txt&amp;quot;, sep = &amp;quot;,&
 &lt;div id=&#34;preliminaries&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Preliminaries&lt;/h2&gt;
 &lt;p&gt;Now that we have our &lt;strong&gt;raw&lt;/strong&gt; dataset ready for analysis, let’s first think little about the objectives of the next steps and what we would like our data to tell us.&lt;/p&gt;
-&lt;p&gt;So, we are interested in the following main question:&lt;/p&gt;
+&lt;p&gt;So we are interested in the following main question:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Are listeners able to match the samples based on the room acoustics of the concert halls and are there differences in performances when they do this with the same and different excitation signals?&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;This question can then be broken down to different levels:&lt;/p&gt;
 &lt;ul&gt;
@@ -152,7 +152,7 @@ simdata &amp;lt;- read.table(&amp;quot;SIMDATA.txt&amp;quot;, sep = &amp;quot;,&
 &lt;li&gt;Results of each individual&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In the skinning of any dataset, a good first step is to try to plot the results in some way.&lt;/p&gt;
-&lt;p&gt;Here, we will simply calculate the percentages of the correct answer per each individual and then plot the results with ggplot.&lt;/p&gt;
+&lt;p&gt;Here we will simply calculate the percentages of the correct answer per each individual and then plot the results with ggplot.&lt;/p&gt;
 &lt;p&gt;Calculate the percentages and make a corresponding data.frame:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;dataf &amp;lt;- c()
 ids &amp;lt;- c()
@@ -184,20 +184,20 @@ SAMEDIFF &amp;lt;- cbind(ids, SAMEDIFF)
 colnames(SAMEDIFF)[1] &amp;lt;- &amp;#39;ID&amp;#39; 
 head(SAMEDIFF) # show first 6 rows&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##    ID diff same BEE1-BEE2 BEE2-BEE1 viulut-viulut2 BEE1-BEE1 BEE2-BEE2
-## 1  S1 0.04 0.42      0.00      0.12           0.00      0.12      0.75
-## 2 S10 0.12 0.29      0.12      0.25           0.00      0.25      0.38
-## 3 S11 0.17 0.25      0.38      0.12           0.00      0.25      0.12
-## 4 S12 0.33 0.25      0.12      0.50           0.38      0.38      0.25
-## 5 S13 0.25 0.17      0.25      0.25           0.25      0.25      0.00
-## 6 S14 0.21 0.25      0.25      0.25           0.12      0.38      0.25
+## 1  S1 0.19 0.19      0.50      0.25           0.00      0.25      0.00
+## 2 S10 0.25 0.25      0.50      0.25           0.12      0.00      0.25
+## 3 S11 0.31 0.38      0.00      0.25           0.50      0.50      0.25
+## 4 S12 0.19 0.19      0.00      0.50           0.12      0.00      0.00
+## 5 S13 0.44 0.25      0.75      0.25           0.38      0.25      0.50
+## 6 S14 0.31 0.25      0.00      0.50           0.38      0.00      0.00
 ##   viulut-viulut
-## 1          0.38
-## 2          0.25
+## 1          0.25
+## 2          0.38
 ## 3          0.38
-## 4          0.12
-## 5          0.25
-## 6          0.12&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Then, make a “long”-format table with melt()-function, and plot the results with ggplot.&lt;/p&gt;
+## 4          0.38
+## 5          0.12
+## 6          0.50&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Then make a “long”-format table with melt()-function and plot the results with ggplot.&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#### BOXPLOTS: OVERALL SAME vs DIFF
 library(reshape2) # melt()-function
 # melt the data into &amp;quot;long&amp;quot;-format for ggplotting
@@ -206,7 +206,7 @@ m0 = melt(SAMEDIFF[,c(&amp;#39;same&amp;#39;,&amp;#39;diff&amp;#39;)],measure.va
 library(ggplot2)
 
 g1 &amp;lt;- ggplot(data = m0, aes(y = value, x = G)) +  theme_bw() + 
-  geom_boxplot() +
+  geom_boxplot(outlier.shape = NA) +
 geom_point(aes(y = value, x = G, shape = G), position = position_jitter(width = 0.2), size = 1, alpha = 1, show.legend = F, color = &amp;#39;grey&amp;#39;) +
 coord_cartesian(ylim = c(0,1)) + labs(title =  &amp;#39;&amp;#39;, x = &amp;#39;&amp;#39;, y = &amp;#39;Percentage of correct answers&amp;#39;, size = 0.1, color = &amp;#39;black&amp;#39;) + 
 theme(axis.title.y = element_text(size = 8)) + ggtitle(&amp;#39;Overall&amp;#39;)
@@ -224,7 +224,7 @@ m1 &amp;lt;- cbind(m1,samedifflist, muslist)
 
 g2 &amp;lt;- ggplot(data = m1, aes(y = value, x = samedifflist,colour = muslist),show.legend = F) + 
 theme_bw() + 
-geom_boxplot(show.legend = F)+
+geom_boxplot(outlier.shape = NA,show.legend = F)+
 geom_point(aes(y = value, colour = muslist), position = position_jitter(width = 0.2), size = 0.5, alpha = 0.5, show.legend = F, color = &amp;#39;grey&amp;#39;) +
 facet_grid(.~muslist) +
 coord_cartesian(ylim = c(0,1)) + labs(title =  &amp;#39;&amp;#39;, x = &amp;#39;&amp;#39;, y = &amp;#39;Percentage of correct answers&amp;#39;, size = 0.1, color = &amp;#39;black&amp;#39;) + 
@@ -233,9 +233,9 @@ theme(axis.title.y = element_text(size = 8)) + ggtitle(&amp;#39;Per music&amp;#3
 library(gridExtra) # for grid.arrange()
 grid.arrange(g1,g2,nrow = 1)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;../post/2020-22-01-chm/2020-22-01-chm_files/figure-html/boxplots-1.png&#34; width=&#34;576&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Now we have the first view of our data. Note, that as expected with randomised data, the mean percentages of correct answers set nicely on the change level of 1/4 = 25 % as it should be.&lt;/p&gt;
-&lt;p&gt;With another dataset, one would be inclined to run a test, such as Kruskal-Wallis rank sum test (non-parametric one way anova by ranks) to test whether the distributions of the percentages of correct answers differ between the same and difference cases. Using the m1-data from above, one may run this e.g., by kruskal.test(x=m1$value, g=m1$samedifflist).&lt;/p&gt;
-&lt;p&gt;Now, besides just looking at the correct answers, we can look at the actual perceived halls (ANS column) versus the true (REF column) halls.&lt;/p&gt;
+&lt;p&gt;Now we have the first view of our data. Note that as expected with randomised data the mean percentages of correct answers set nicely on the change level of 1/4 = 25 % as it should be.&lt;/p&gt;
+&lt;p&gt;With another dataset one would be inclined to run a test, such as Kruskal-Wallis rank sum test (non-parametric one way anova by ranks) to test whether the distributions of the percentages of correct answers differ between the same and difference cases. Using the m1-data from above, one may run this e.g., by kruskal.test(x=m1$value, g=m1$samedifflist).&lt;/p&gt;
+&lt;p&gt;Now, besides just looking at the correct answers we can look at the actual perceived halls (ANS column) versus the true halls (REF column).&lt;/p&gt;
 &lt;p&gt;This way the experiment now presents itself as a classical multiclass classification problem, where the listeners makes class “predictions” based on one’s perceptions.&lt;/p&gt;
 &lt;p&gt;Therefore, these results are perhaps best presented and analysed in the spirit of machine learning and treated with the tools, concepts and metrics developed for the classification tasks and for the analysis of confusion matrices.&lt;/p&gt;
 &lt;div id=&#34;onto-the-confusion-matrices&#34; class=&#34;section level3&#34;&gt;
@@ -312,10 +312,10 @@ musmatsS[[as.character(s)]] &amp;lt;- musmatsSS
 # Let&amp;#39;s see what we have:
 hallmat1 # overall same&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##    AC BP CP MH
-## AC 39 17 39 25
-## BP 24 39 24 33
-## CP 31 33 26 30
-## MH 26 28 33 33&lt;/code&gt;&lt;/pre&gt;
+## AC 23 16 18 23
+## BP 15 26 23 16
+## CP 17 24 19 20
+## MH 21 20 24 15&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#hallmat2 # overall diff (not shown)
 #samemats # per music, same (not shown)
 #diffmats # per music, diff (not shown)
@@ -343,46 +343,45 @@ levels = halls
 )
 
 xtab &amp;lt;- table(Response,Reference)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;And now, we are ready to run the analysis function from the caret-pckg:&lt;/p&gt;
+&lt;p&gt;And now we are ready to run the analysis function from the caret-pckg:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#### ANALYSIS:
 confusionMatrix(xtab, mode = &amp;quot;everything&amp;quot;)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## Confusion Matrix and Statistics
 ## 
 ##         Reference
 ## Response AC BP CP MH
-##       AC 39 24 31 26
-##       BP 17 39 33 28
-##       CP 39 24 26 33
-##       MH 25 33 30 33
+##       AC 23 15 17 21
+##       BP 16 26 24 20
+##       CP 18 23 19 24
+##       MH 23 16 20 15
 ## 
 ## Overall Statistics
 ##                                           
-##                Accuracy : 0.2854          
-##                  95% CI : (0.2454, 0.3281)
+##                Accuracy : 0.2594          
+##                  95% CI : (0.2122, 0.3111)
 ##     No Information Rate : 0.25            
-##     P-Value [Acc &amp;gt; NIR] : 0.04246         
+##     P-Value [Acc &amp;gt; NIR] : 0.3698          
 ##                                           
-##                   Kappa : 0.0472          
+##                   Kappa : 0.0125          
 ##                                           
-##  Mcnemar&amp;#39;s Test P-Value : 0.66277         
+##  Mcnemar&amp;#39;s Test P-Value : 0.9863          
 ## 
 ## Statistics by Class:
 ## 
 ##                      Class: AC Class: BP Class: CP Class: MH
-## Sensitivity            0.32500   0.32500   0.21667   0.27500
-## Specificity            0.77500   0.78333   0.73333   0.75556
-## Pos Pred Value         0.32500   0.33333   0.21311   0.27273
-## Neg Pred Value         0.77500   0.77686   0.73743   0.75766
-## Precision              0.32500   0.33333   0.21311   0.27273
-## Recall                 0.32500   0.32500   0.21667   0.27500
-## F1                     0.32500   0.32911   0.21488   0.27386
+## Sensitivity            0.28750   0.32500   0.23750   0.18750
+## Specificity            0.77917   0.75000   0.72917   0.75417
+## Pos Pred Value         0.30263   0.30233   0.22619   0.20270
+## Neg Pred Value         0.76639   0.76923   0.74153   0.73577
+## Precision              0.30263   0.30233   0.22619   0.20270
+## Recall                 0.28750   0.32500   0.23750   0.18750
+## F1                     0.29487   0.31325   0.23171   0.19481
 ## Prevalence             0.25000   0.25000   0.25000   0.25000
-## Detection Rate         0.08125   0.08125   0.05417   0.06875
-## Detection Prevalence   0.25000   0.24375   0.25417   0.25208
-## Balanced Accuracy      0.55000   0.55417   0.47500   0.51528&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;To recap, what these metrics mean, one may consult the &lt;a href=&#34;https://en.wikipedia.org/wiki/Confusion_matrix&#34;&gt;wikipedia page&lt;/a&gt; and also &lt;a href=&#34;https://towardsdatascience.com/multi-class-metrics-made-simple-part-i-precision-and-recall-9250280bddc2&#34;&gt;this&lt;/a&gt; and &lt;a href=&#34;https://www.datascienceblog.net/post/machine-learning/performance-measures-multi-class-problems/&#34;&gt;this&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;But, here is a very short summary:&lt;/p&gt;
-&lt;p&gt;Terminology:&lt;/p&gt;
+## Detection Rate         0.07187   0.08125   0.05937   0.04688
+## Detection Prevalence   0.23750   0.26875   0.26250   0.23125
+## Balanced Accuracy      0.53333   0.53750   0.48333   0.47083&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As shown, the confusionMatrix()-function outputs a set of performance metrics, and onw may want to reca what these metrics mean from the &lt;a href=&#34;https://en.wikipedia.org/wiki/Confusion_matrix&#34;&gt;wikipedia page&lt;/a&gt;. Also give a look &lt;a href=&#34;https://towardsdatascience.com/multi-class-metrics-made-simple-part-i-precision-and-recall-9250280bddc2&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://www.datascienceblog.net/post/machine-learning/performance-measures-multi-class-problems/&#34;&gt;here&lt;/a&gt; for some more tutorial on multiclass classification&lt;/p&gt;
+&lt;p&gt;But in anycase, here is a very short summary about the terminology and the derivations:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;condition positive (&lt;strong&gt;P&lt;/strong&gt;) : the number of real positive cases in the data&lt;/li&gt;
 &lt;li&gt;condition negative (&lt;strong&gt;N&lt;/strong&gt;): the number of real negative cases in the data&lt;/li&gt;
@@ -436,8 +435,68 @@ confusionMatrix(xtab, mode = &amp;quot;everything&amp;quot;)&lt;/code&gt;&lt;/pr
 &lt;li&gt;Detection Prevalence = (A+B)/(A+B+C+D)&lt;/li&gt;
 &lt;li&gt;Balanced Accuracy = (sensitivity+specificity)/2&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;The output includes &lt;a href=&#34;https://en.wikipedia.org/wiki/Cohen%27s_kappa&#34;&gt;Cohen’s &lt;strong&gt;Kappa&lt;/strong&gt; statistic&lt;/a&gt; which measures the agreement between the predictions and the reference counts and it ranges from 0 to 1, so that, close to zero values indicate that the performance is not better than change level.&lt;/p&gt;
+&lt;p&gt;It is interensting that also P-value of &lt;a href=&#34;https://en.wikipedia.org/wiki/McNemar%27s_test&#34;&gt;McNemar’s test&lt;/a&gt; is included. McNemar’s test indicates whether the marginal frequecies in the confusion matrix are equal (null hypothesis) or not (alternative hypothesis). This test requires matched pairs of observations, and I do not fully understand what is the meaning here.&lt;/p&gt;
+&lt;p&gt;However, McNemar’s test is actually quite useful in many cases when one can form matched pairs from the data, and for our current analysis, there is actually another use of McNemar’s test illustrated next.&lt;/p&gt;
+&lt;p&gt;We can generate a contingengy table between the “same” and “different” sounds from our data by forming matched pairs where the same subject has made task with a particular sound and a particular concert hall as the reference sample. The following script illustrates what I mean:&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# McNemar&amp;#39;s test; create contingengy table between same and different by pairing the answers
+
+# case by case
+A &amp;lt;- 0 # number of correct answers on both same and different
+B &amp;lt;- 0 # number of answers where same is correct and different is incorrect
+C &amp;lt;- 0 # number of answers where same is incorrect and different is correct
+D &amp;lt;- 0 # number of incorrect answers on both same and different
+
+musref &amp;lt;- levels(simdata$MUS_REF)
+halls &amp;lt;- levels(simdata$REF)
+subs &amp;lt;- levels(simdata$SUB_ID)
+
+for(m in musref){
+    for (h in halls){       
+        sametemp &amp;lt;- subset(simdata, REF == h &amp;amp; MUS_REF == m &amp;amp; SAMEDIFF == &amp;#39;same&amp;#39;)
+        difftemp &amp;lt;- subset(simdata, REF == h &amp;amp; MUS_REF == m &amp;amp; SAMEDIFF == &amp;#39;diff&amp;#39;)
+    
+        for (s in subs){
+            if (sametemp[sametemp$SUB_ID == s,]$CORRECT == 1 &amp;amp;&amp;amp; difftemp[difftemp$SUB_ID == s,]$CORRECT == 1) {
+                A &amp;lt;- A + 1;
+            }
+            if (sametemp[sametemp$SUB_ID == s,]$CORRECT == 1 &amp;amp;&amp;amp; difftemp[difftemp$SUB_ID == s,]$CORRECT == 0){
+                B &amp;lt;- B + 1
+            }
+            if (sametemp[sametemp$SUB_ID == s,]$CORRECT == 0 &amp;amp;&amp;amp; difftemp[difftemp$SUB_ID == s,]$CORRECT == 1){
+                C &amp;lt;- C + 1
+            }
+            if (sametemp[sametemp$SUB_ID == s,]$CORRECT == 0 &amp;amp;&amp;amp; difftemp[difftemp$SUB_ID == s,]$CORRECT == 0){
+                D &amp;lt;- D + 1
+            }
+            
+        }
+    }
+}
+
+# CHECK THE RESULTS:
+c(A, B, C, D)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## [1]  13  45  49 133&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# Perform the McNemar&amp;#39;s test
+Matching &amp;lt;-
+matrix(c(A, C, B, D),
+       nrow = 2,
+       dimnames = list(&amp;quot;Same&amp;quot; = c(&amp;quot;Correct&amp;quot;, &amp;quot;Incorrect&amp;quot;),
+                       &amp;quot;Diff&amp;quot; = c(&amp;quot;Correct&amp;quot;, &amp;quot;Incorrect&amp;quot;)))
+Matching&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##            Diff
+## Same        Correct Incorrect
+##   Correct        13        45
+##   Incorrect      49       133&lt;/code&gt;&lt;/pre&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;mcnemar.test(Matching)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;## 
+##  McNemar&amp;#39;s Chi-squared test with continuity correction
+## 
+## data:  Matching
+## McNemar&amp;#39;s chi-squared = 0.095745, df = 1, p-value = 0.757&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In this way, McNemar’s test provides as a nice direct test statistic in terms of our question whether there is a difference between in the performance between our “same” and “different” cases of interest, and all together the analysis of this matching data (when also looked at different levels) seems to be quite exhaustive.&lt;/p&gt;
 &lt;p&gt;…&lt;/p&gt;
-&lt;p&gt;And finally, here is an example of how to illustrate the results by plotting the confusion matrices with ggplot2. (xtab2 was generated the same way as xtab…)&lt;/p&gt;
+&lt;p&gt;Finally, in order to have some more figures to accompany the analysis here is an example of how to illustrate the results by plotting the confusion matrices with ggplot2. (in the following, xtab2 was generated the same way as xtab.)&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;### PLOTTING WITH GGPLOT
 # SAME plot
 normvalue &amp;lt;- sum(hallmat1[1,]) # normalize
@@ -453,14 +512,13 @@ geom_text(aes(Response, Reference, label = value), color = &amp;quot;black&amp;q
 #gdiff
 
 grid.arrange(gsame,gdiff,nrow=1)&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;&lt;img src=&#34;../post/2020-22-01-chm/2020-22-01-chm_files/figure-html/unnamed-chunk-5-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;../post/2020-22-01-chm/2020-22-01-chm_files/figure-html/unnamed-chunk-6-1.png&#34; width=&#34;672&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;So there we are! And we will stop for now with this simulated dataset.&lt;/p&gt;
 &lt;/div&gt;
 &lt;div id=&#34;next-steps..&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;Next steps..&lt;/h3&gt;
 &lt;p&gt;Next steps would be to analyse the dataset in detail, investigate the differences between same and different excitation signals, evaluate whether there are some particular patterns emerging between the halls, and finally to provide an answer to the original question(s) about the human ability to match concert halls when listening to the same and different excitation signals?&lt;/p&gt;
-&lt;p&gt;If all goes as planned, you’ll find the answer in a proper article sometime in the future and I’ll then link it here.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Cheers.&lt;/em&gt; :)&lt;/p&gt;
+&lt;p&gt;If all goes as planned you’ll find the answer in a proper article sometime in the future and I’ll then link it here.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 </description>
