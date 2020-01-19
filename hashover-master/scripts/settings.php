@@ -17,7 +17,7 @@
 
 
 	// Various Settings
-	$root_dir	= '/hashover/';					// HTTP root directory for comments
+	$root_dir	= '/hashover-master/';					// HTTP root directory for comments
 	$language	= 'en';						// Language used for forms, buttons, links, and tooltips
 	$name		= 'GNU Knows Who';				// Nickname when one isn't given
 	$template	= 'default';					// Comment layout template
