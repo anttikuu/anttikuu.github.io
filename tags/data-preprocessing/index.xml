@@ -152,7 +152,7 @@ simdata &amp;lt;- read.table(&amp;quot;SIMDATA.txt&amp;quot;, sep = &amp;quot;,&
 &lt;li&gt;Results of each individual&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In the skinning of any dataset, a good first step is to try to plot the results in some way.&lt;/p&gt;
-&lt;p&gt;Here we will simply calculate the percentages of the correct answer per each individual and then plot the results with ggplot.&lt;/p&gt;
+&lt;p&gt;Here we will simply calculate the percentages of the correct answer per each individual and then make a boxplot of the results with ggplot. (Boxplot depicts the data with the median and the interquartile range (IQR) (Q1 (25 %) - Q3 (75%)) with whiskers extending to Q1-1.5*IQR and Q3+1.5*IQR.)&lt;/p&gt;
 &lt;p&gt;Calculate the percentages and make a corresponding data.frame:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;dataf &amp;lt;- c()
 ids &amp;lt;- c()
@@ -233,7 +233,7 @@ theme(axis.title.y = element_text(size = 8)) + ggtitle(&amp;#39;Per music&amp;#3
 library(gridExtra) # for grid.arrange()
 grid.arrange(g1,g2,nrow = 1)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;&lt;img src=&#34;../../post/2020-22-01-chm/2020-22-01-chm_files/figure-html/boxplots-1.png&#34; width=&#34;576&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;Now we have the first view of our data. Note that as expected with randomised data the mean percentages of correct answers set nicely on the change level of 1/4 = 25 % as it should be.&lt;/p&gt;
+&lt;p&gt;Now we have the first view of our data. Note that as expected with randomised data the median percentages of correct answers set nicely on the change level of 1/4 = 25 %.&lt;/p&gt;
 &lt;p&gt;With another dataset one would be inclined to run a test, such as Kruskal-Wallis rank sum test (non-parametric one way anova by ranks) to test whether the distributions of the percentages of correct answers differ between the same and difference cases. Using the m1-data from above, one may run this e.g., by kruskal.test(x=m1$value, g=m1$samedifflist).&lt;/p&gt;
 &lt;p&gt;Now, besides just looking at the correct answers we can look at the actual perceived halls (ANS column) versus the true halls (REF column).&lt;/p&gt;
 &lt;p&gt;This way the experiment now presents itself as a classical multiclass classification problem, where the listeners makes class “predictions” based on one’s perceptions.&lt;/p&gt;
@@ -436,7 +436,7 @@ confusionMatrix(xtab, mode = &amp;quot;everything&amp;quot;)&lt;/code&gt;&lt;/pr
 &lt;li&gt;Balanced Accuracy = (sensitivity+specificity)/2&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;The output includes &lt;a href=&#34;https://en.wikipedia.org/wiki/Cohen%27s_kappa&#34;&gt;Cohen’s &lt;strong&gt;Kappa&lt;/strong&gt; statistic&lt;/a&gt; which measures the agreement between the predictions and the reference counts and it ranges from 0 to 1, so that, close to zero values indicate that the performance is not better than change level.&lt;/p&gt;
-&lt;p&gt;It is interensting that also P-value of &lt;a href=&#34;https://en.wikipedia.org/wiki/McNemar%27s_test&#34;&gt;McNemar’s test&lt;/a&gt; is included. McNemar’s test indicates whether the marginal frequecies in the confusion matrix are equal (null hypothesis) or not (alternative hypothesis). This test requires matched pairs of observations, and I do not fully understand what is the meaning here.&lt;/p&gt;
+&lt;p&gt;It is interesting that also P-value of &lt;a href=&#34;https://en.wikipedia.org/wiki/McNemar%27s_test&#34;&gt;McNemar’s test&lt;/a&gt; is included. McNemar’s test indicates whether the marginal frequecies in the confusion matrix are equal (null hypothesis) or not (alternative hypothesis). This test requires matched pairs of observations, and I do not fully understand what is the meaning here.&lt;/p&gt;
 &lt;p&gt;However, McNemar’s test is actually quite useful in many cases when one can form matched pairs from the data, and for our current analysis, there is actually another use of McNemar’s test illustrated next.&lt;/p&gt;
 &lt;p&gt;We can generate a contingengy table between the “same” and “different” sounds from our data by forming matched pairs where the same subject has made task with a particular sound and a particular concert hall as the reference sample. The following script illustrates what I mean:&lt;/p&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# McNemar&amp;#39;s test; create contingengy table between same and different by pairing the answers
