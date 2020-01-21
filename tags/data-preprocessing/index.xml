@@ -380,8 +380,8 @@ confusionMatrix(xtab, mode = &amp;quot;everything&amp;quot;)&lt;/code&gt;&lt;/pr
 ## Detection Rate         0.07187   0.08125   0.05937   0.04688
 ## Detection Prevalence   0.23750   0.26875   0.26250   0.23125
 ## Balanced Accuracy      0.53333   0.53750   0.48333   0.47083&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;As shown, the confusionMatrix()-function outputs a set of performance metrics, and onw may want to reca what these metrics mean from the &lt;a href=&#34;https://en.wikipedia.org/wiki/Confusion_matrix&#34;&gt;wikipedia page&lt;/a&gt;. Also give a look &lt;a href=&#34;https://towardsdatascience.com/multi-class-metrics-made-simple-part-i-precision-and-recall-9250280bddc2&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://www.datascienceblog.net/post/machine-learning/performance-measures-multi-class-problems/&#34;&gt;here&lt;/a&gt; for some more tutorial on multiclass classification&lt;/p&gt;
-&lt;p&gt;But in anycase, here is a very short summary about the terminology and the derivations:&lt;/p&gt;
+&lt;p&gt;As shown, the confusionMatrix()-function outputs a set of performance metrics, and information on these metrics can be found from the &lt;a href=&#34;https://en.wikipedia.org/wiki/Confusion_matrix&#34;&gt;wikipedia page&lt;/a&gt;. Also give a look &lt;a href=&#34;https://towardsdatascience.com/multi-class-metrics-made-simple-part-i-precision-and-recall-9250280bddc2&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://www.datascienceblog.net/post/machine-learning/performance-measures-multi-class-problems/&#34;&gt;here&lt;/a&gt; for some more tutorials on multiclass classification&lt;/p&gt;
+&lt;p&gt;Here is a very short summary about the terminology and the derivations:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;condition positive (&lt;strong&gt;P&lt;/strong&gt;) : the number of real positive cases in the data&lt;/li&gt;
 &lt;li&gt;condition negative (&lt;strong&gt;N&lt;/strong&gt;): the number of real negative cases in the data&lt;/li&gt;
