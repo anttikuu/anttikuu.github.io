@@ -2,24 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Authors | Antti Kuusinen</title>
-    <link>/authors/</link>
-      <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://anttikuusinen.github.io/authors/</link>
+      <atom:link href="https://anttikuusinen.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2020</copyright>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2021</copyright>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://anttikuusinen.github.io/img/icon-192.png</url>
       <title>Authors</title>
-      <link>/authors/</link>
+      <link>https://anttikuusinen.github.io/authors/</link>
     </image>
-    
-    <item>
-      <title></title>
-      <link>/authors/admin/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/authors/admin/</guid>
-      <description>&lt;p&gt;Hi! I&amp;rsquo;m working as a postdoc at Aalto University Acoustics Lab. My research concerns human perception of speech and music in reverberant spaces, including such aspects as listening effort and the effects of hearing impairment.&lt;/p&gt;
-</description>
-    </item>
     
   </channel>
 </rss>
