@@ -2,26 +2,27 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>data preprocessing | Antti Kuusinen</title>
-    <link>/tags/data-preprocessing/</link>
-      <atom:link href="/tags/data-preprocessing/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://anttikuusinen.github.io/tags/data-preprocessing/</link>
+      <atom:link href="https://anttikuusinen.github.io/tags/data-preprocessing/index.xml" rel="self" type="application/rss+xml" />
     <description>data preprocessing</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2020</copyright><lastBuildDate>Wed, 22 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2021</copyright><lastBuildDate>Wed, 22 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://anttikuusinen.github.io/img/icon-192.png</url>
       <title>data preprocessing</title>
-      <link>/tags/data-preprocessing/</link>
+      <link>https://anttikuusinen.github.io/tags/data-preprocessing/</link>
     </image>
     
     <item>
       <title>On the data analysis of perceptual matching of concert hall acoustics</title>
-      <link>/post/2020-22-01-chm/2020-22-01-chm/</link>
+      <link>https://anttikuusinen.github.io/post/2020-22-01-chm/2020-22-01-chm/</link>
       <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/post/2020-22-01-chm/2020-22-01-chm/</guid>
+      <guid>https://anttikuusinen.github.io/post/2020-22-01-chm/2020-22-01-chm/</guid>
       <description>
 
 
 &lt;!-- % This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;http://rmarkdown.rstudio.com&gt;. --&gt;
 &lt;!-- When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this: --&gt;
+&lt;p&gt;TRYING TO UPDATE&lt;/p&gt;
 &lt;p&gt;In this post I will briefly discuss and illustrate the analysis of perceptual matching experiment on concert hall acoustics. How the sound samples / auralizations of concert hall acoustics in this experiment were made is a topic of another time.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;(This presentation is prepared for and presented in the “Acoutect Research and Demonstrator Workshop 5” held at Aalto University in 20-24 January 2020)&lt;/em&gt;&lt;/p&gt;
 &lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
@@ -31,7 +32,7 @@
 &lt;p&gt;However, the acoustic “teleportation” is only possible at the lab, and in natural environments we may perceptually evaluate the acoustical characteristics and differences between spaces only by physically moving from one place to another, for instance, from concert hall to concert hall. And aside from research projects, seldom exactly the same sounds are listened to, but commonly our perceptions and assessments of room acoustical qualities are based on the experience of different sounds in the different rooms.&lt;/p&gt;
 &lt;p&gt;So here we simply asked that &lt;em&gt;are people able to detect and match concert halls when they are listening to same or different excitation signals?&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;So, in this experiment the listener is presented with a sound that is auralized to a particular concert hall (reference), and then she/he needs to find the same concert hall among four alternatives with different or same sound auralized in those halls. Listener is also presented with the same sounds to enable comparison of performance between the different and same sounds. The experiment was implemented in Matlab. Here is a figure of the GUI:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../img/match.png&#34; width=&#34;50%&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;match.png&#34; width=&#34;50%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;The experiment is constructed with the following variables:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Four concert halls coded as “AC”, “BP”, “CP”, “MH”.
@@ -110,22 +111,22 @@ chm_df &amp;lt;- data.frame(chm_df)
 # CHECK data
 str(chm_df)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;## &amp;#39;data.frame&amp;#39;:    192 obs. of  18 variables:
-##  $ SUB_ID   : Factor w/ 4 levels &amp;quot;S01&amp;quot;,&amp;quot;S02&amp;quot;,&amp;quot;S03&amp;quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ SUB_ID   : chr  &amp;quot;S01&amp;quot; &amp;quot;S01&amp;quot; &amp;quot;S01&amp;quot; &amp;quot;S01&amp;quot; ...
 ##  $ ORD      : int  1 2 3 4 5 6 7 8 9 10 ...
 ##  $ CASE_ID  : int  1 2 5 23 3 14 4 24 10 8 ...
-##  $ SOUNDTYPE: Factor w/ 2 levels &amp;quot;INSTR&amp;quot;,&amp;quot;MUSIC&amp;quot;: 2 2 2 1 2 2 2 1 2 2 ...
+##  $ SOUNDTYPE: chr  &amp;quot;MUSIC&amp;quot; &amp;quot;MUSIC&amp;quot; &amp;quot;MUSIC&amp;quot; &amp;quot;INSTR&amp;quot; ...
 ##  $ SOUNDNUM : int  0 0 0 7 0 0 0 8 0 0 ...
-##  $ SAMEDIFF : Factor w/ 2 levels &amp;quot;diff&amp;quot;,&amp;quot;same&amp;quot;: 2 2 1 1 2 2 2 1 1 1 ...
-##  $ MUS_REF  : Factor w/ 3 levels &amp;quot;BEE1&amp;quot;,&amp;quot;BEE2&amp;quot;,..: 1 1 1 3 1 2 1 3 2 1 ...
-##  $ MUS_COM  : Factor w/ 4 levels &amp;quot;BEE1&amp;quot;,&amp;quot;BEE2&amp;quot;,..: 1 1 2 4 1 2 1 4 1 2 ...
-##  $ REF      : Factor w/ 4 levels &amp;quot;AC&amp;quot;,&amp;quot;BP&amp;quot;,&amp;quot;CP&amp;quot;,..: 1 2 1 4 4 2 3 3 2 3 ...
-##  $ A        : Factor w/ 4 levels &amp;quot;AC&amp;quot;,&amp;quot;BP&amp;quot;,&amp;quot;CP&amp;quot;,..: 3 2 2 1 4 1 4 1 3 3 ...
-##  $ B        : Factor w/ 4 levels &amp;quot;AC&amp;quot;,&amp;quot;BP&amp;quot;,&amp;quot;CP&amp;quot;,..: 1 1 1 2 2 2 3 3 1 2 ...
-##  $ C        : Factor w/ 4 levels &amp;quot;AC&amp;quot;,&amp;quot;BP&amp;quot;,&amp;quot;CP&amp;quot;,..: 4 3 4 3 3 3 2 2 4 1 ...
-##  $ D        : Factor w/ 4 levels &amp;quot;AC&amp;quot;,&amp;quot;BP&amp;quot;,&amp;quot;CP&amp;quot;,..: 2 4 3 4 1 4 1 4 2 4 ...
-##  $ ANS      : Factor w/ 1 level &amp;quot;BP&amp;quot;: 1 NA NA NA NA NA NA NA NA NA ...
+##  $ SAMEDIFF : chr  &amp;quot;same&amp;quot; &amp;quot;same&amp;quot; &amp;quot;diff&amp;quot; &amp;quot;diff&amp;quot; ...
+##  $ MUS_REF  : chr  &amp;quot;BEE1&amp;quot; &amp;quot;BEE1&amp;quot; &amp;quot;BEE1&amp;quot; &amp;quot;viulut&amp;quot; ...
+##  $ MUS_COM  : chr  &amp;quot;BEE1&amp;quot; &amp;quot;BEE1&amp;quot; &amp;quot;BEE2&amp;quot; &amp;quot;viulut2&amp;quot; ...
+##  $ REF      : chr  &amp;quot;AC&amp;quot; &amp;quot;BP&amp;quot; &amp;quot;AC&amp;quot; &amp;quot;MH&amp;quot; ...
+##  $ A        : chr  &amp;quot;CP&amp;quot; &amp;quot;BP&amp;quot; &amp;quot;BP&amp;quot; &amp;quot;AC&amp;quot; ...
+##  $ B        : chr  &amp;quot;AC&amp;quot; &amp;quot;AC&amp;quot; &amp;quot;AC&amp;quot; &amp;quot;BP&amp;quot; ...
+##  $ C        : chr  &amp;quot;MH&amp;quot; &amp;quot;CP&amp;quot; &amp;quot;MH&amp;quot; &amp;quot;CP&amp;quot; ...
+##  $ D        : chr  &amp;quot;BP&amp;quot; &amp;quot;MH&amp;quot; &amp;quot;CP&amp;quot; &amp;quot;MH&amp;quot; ...
+##  $ ANS      : chr  &amp;quot;BP&amp;quot; NA NA NA ...
 ##  $ CORRECT  : int  0 0 0 0 0 0 0 0 0 0 ...
-##  $ TIME     : Factor w/ 2 levels &amp;quot;13-Jan-2020 15:27:52&amp;quot;,..: 2 1 1 1 1 1 1 1 1 1 ...
+##  $ TIME     : chr  &amp;quot;14-Jan-2020 13:34:28&amp;quot; &amp;quot;13-Jan-2020 15:27:52&amp;quot; &amp;quot;13-Jan-2020 15:27:52&amp;quot; &amp;quot;13-Jan-2020 15:27:52&amp;quot; ...
 ##  $ COMPLETED: int  1 0 0 0 0 0 0 0 0 0 ...
 ##  $ REP      : int  1 1 1 1 1 1 1 1 1 1 ...&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;The function &lt;strong&gt;str()&lt;/strong&gt; summarises the variables and their types and it is always worthwhile to check that there no some funny business going on.&lt;/p&gt;
@@ -135,8 +136,22 @@ str(chm_df)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# First remove variables from workspace
 rm(list = ls()) 
 # and read the data.table:
-simdata &amp;lt;- read.table(&amp;quot;SIMDATA.txt&amp;quot;, sep = &amp;quot;,&amp;quot;, header = T)
-# head(simdata)&lt;/code&gt;&lt;/pre&gt;
+simdata &amp;lt;- read.table(&amp;quot;SIMDATA.txt&amp;quot;, sep = &amp;quot;,&amp;quot;, header = T,stringsAsFactors = T)
+ head(simdata)&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code&gt;##   SUB_ID ORD CASE_ID SOUNDTYPE SOUNDNUM SAMEDIFF MUS_REF MUS_COM REF  A  B  C
+## 1     S1   1      21     INSTR        5     diff  viulut viulut2  AC AC BP MH
+## 2     S1   2      31     INSTR       15     diff  viulut viulut2  MH AC MH CP
+## 3     S1   3       4     MUSIC        0     same    BEE1    BEE1  CP MH AC BP
+## 4     S1   4       3     MUSIC        0     same    BEE1    BEE1  MH MH AC BP
+## 5     S1   5       7     MUSIC        0     diff    BEE1    BEE2  MH AC MH BP
+## 6     S1   6      13     MUSIC        0     same    BEE2    BEE2  AC CP AC MH
+##    D ANS CORRECT                 TIME COMPLETED REP
+## 1 CP  MH       0 18-Jan-2020 21:09:13         0   1
+## 2 BP  CP       0 18-Jan-2020 21:09:13         0   1
+## 3 CP  MH       0 18-Jan-2020 21:09:12         0   0
+## 4 CP  AC       0 18-Jan-2020 21:09:12         0   0
+## 5 CP  BP       0 18-Jan-2020 21:09:12         0   0
+## 6 BP  CP       0 18-Jan-2020 21:09:12         0   1&lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;div id=&#34;preliminaries&#34; class=&#34;section level2&#34;&gt;
