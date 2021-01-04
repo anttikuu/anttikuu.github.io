@@ -554,159 +554,16 @@ grid.arrange(gsame,gdiff,nrow=1)&lt;/code&gt;&lt;/pre&gt;
     <item>
       <title>Online recognition of concert hall acoustics listening experiment</title>
       <link>https://anttikuusinen.github.io/post/2021-04-01-onlinematching/2021-04-01-onlinematching/</link>
-      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
       <guid>https://anttikuusinen.github.io/post/2021-04-01-onlinematching/2021-04-01-onlinematching/</guid>
       <description>
 
 
 &lt;!-- % This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;http://rmarkdown.rstudio.com&gt;. --&gt;
 &lt;!-- When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this: --&gt;
-&lt;p&gt;TRYING TO UPDATE
+&lt;p&gt;This post extends the article &lt;a href=&#34;https://anttikuusinen.github.io/post/2020-22-01-chm/2020-22-01-chm/&#34;&gt;previous post&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Some data analysis aspects of this work were described in the previos
 &lt;a href=&#34;https://anttikuusinen.github.io/post/2020-22-01-chm/2020-22-01-chm/&#34;&gt;previous post&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;(This presentation is prepared for and presented in the “Acoutect Research and Demonstrator Workshop 5” held at Aalto University in 20-24 January 2020)&lt;/em&gt;&lt;/p&gt;
-&lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;The background of the experiment is on our previous research on concert hall acoustics with the loudspeaker orchestra and spatial sound / multichannel auralization techniques that we have conducted at Aalto Uni. over the past decade or so. There are always some ideas left in old notebooks that did not get studied at the time they emerged and this perceptual matching experiment is one of those.&lt;/p&gt;
-&lt;p&gt;The premise and the guiding idea in many of our previous works has been the ability to discern, evaluate and analyse even the tinyest differences and the different flavors and nuances of concert hall acoustics. Thus, previously most of our perceptual studies have been conducted so that the differences between different halls would be as easy to perceive as possible. One of the best ways to reveal small differences in room acoustics is to play back the music (signal) continuously so that when the sample is switched to another hall, only the surrounding acoustics changes while the music goes on and on. &lt;!--(As any one who have participated in listening experiments or perform critical listening knows, also looping back a short segment of sound and quickly switching back and forth between different samples is often a very revealing strategy to pinpoint small differences and nuances in sounds.)--&gt;&lt;/p&gt;
-&lt;p&gt;However, the acoustic “teleportation” is only possible at the lab, and in natural environments we may perceptually evaluate the acoustical characteristics and differences between spaces only by physically moving from one place to another, for instance, from concert hall to concert hall. And aside from research projects, seldom exactly the same sounds are listened to, but commonly our perceptions and assessments of room acoustical qualities are based on the experience of different sounds in the different rooms.&lt;/p&gt;
-&lt;p&gt;So here we simply asked that &lt;em&gt;are people able to detect and match concert halls when they are listening to same or different excitation signals?&lt;/em&gt;&lt;/p&gt;
-&lt;p&gt;So, in this experiment the listener is presented with a sound that is auralized to a particular concert hall (reference), and then she/he needs to find the same concert hall among four alternatives with different or same sound auralized in those halls. Listener is also presented with the same sounds to enable comparison of performance between the different and same sounds. The experiment was implemented in Matlab. Here is a figure of the GUI:&lt;/p&gt;
-&lt;p&gt;The experiment is constructed with the following variables:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Four concert halls coded as “AC”, “BP”, “CP”, “MH”.
-&lt;ul&gt;
-&lt;li&gt;Each one acts as the reference in each sound case&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;MUSIC: Full orchestra
-&lt;ul&gt;
-&lt;li&gt;Two excerpts (7 s) from the same piece by Beethoven -&amp;gt; “BEE1” and “BEE2”&lt;/li&gt;
-&lt;li&gt;Combinations:
-&lt;ul&gt;
-&lt;li&gt;same sounds: BEE1 vs BEE1; BEE2 vs BEE2&lt;/li&gt;
-&lt;li&gt;different sounds: BEE1 vs BEE2; BEE2 vs BEE1&lt;/li&gt;
-&lt;li&gt;each hall acts as a ref -&amp;gt; 4*4 = 16 trials&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;INSTR: Single violin
-&lt;ul&gt;
-&lt;li&gt;Single sounds and short passages (&amp;lt; 6 s)&lt;/li&gt;
-&lt;li&gt;Combinations:
-&lt;ul&gt;
-&lt;li&gt;same: i.e., Violin 1 vs Violin 1 (8 trials)&lt;/li&gt;
-&lt;li&gt;different: i.e., Violin 1 vs Violin 2 (8 trials)&lt;/li&gt;
-&lt;li&gt;Note that these are single intrument sounds and it does not make much sense to do Violin 2 vs Violin 2, as it would be basically the same as Violin 1 vs Violin 1.&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;NOTE: Matching is done only within MUSIC or INSTR sounds, meaning that Beethoven is not compared to Violin sounds or vice versa.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;We would have liked to include one repetition of each of the trials, but because this experiment was scheduled to be run in a single afternoon with approx. 15 people, the experiment should not take more than 30 min to complete and it was necesssary to sacrifice the repetition in order to reduce the final lenght of experiment.&lt;/p&gt;
-&lt;div id=&#34;for-the-uninitialized-reading-the-data-from-.csv-files-in-r&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;For the uninitialized: Reading the data from .csv files in R&lt;/h3&gt;
-&lt;p&gt;In this experiment, I chose to set up Matlab to output the results as .csv files for each listener and then move to R for the data analysis.&lt;/p&gt;
-&lt;p&gt;Let’s first have a peak at the data of a single individual:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#  READ SINGLE CSV FILE &lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;So this basically illustrates also the design matrix of the experiment; the different columns hold the variables, for instance, MUS_REF indicates the sound of the REF and MUS_COM that of the comparison samples. SAMEDIFF column indicates whether the MUS_REF and MUS_COM were the same or different sounds. REF and A-D shows the hall names behind the GUI buttond and the column ANS indicates the chosen response and CORRECT indicates whether the answer was correct (1) or not (0).&lt;br /&gt;
-(No need to worry about some of the columns, for instance, REP does not mean anything here as there were no repetitions.)&lt;/p&gt;
-&lt;p&gt;Then a set of individual .csv -files can be read and bind to single data.frame as follows (For illustration purposes, now here is only 4 individual .csv files):&lt;/p&gt;
-&lt;p&gt;The function &lt;strong&gt;str()&lt;/strong&gt; summarises the variables and their types and it is always worthwhile to check that there no some funny business going on.&lt;/p&gt;
-&lt;p&gt;Now, instead of using only 4 individuals, I have simulated random results for 20 individuals, in the hope to better reflect the real data that we are aiming at.&lt;/p&gt;
-&lt;p&gt;These simulated results have been saved in “SIMDATA.txt”, which is in the same format as the data.frame generated above.&lt;/p&gt;
-&lt;p&gt;This data set will be used in the next steps of this presentation.&lt;/p&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div id=&#34;preliminaries&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Preliminaries&lt;/h2&gt;
-&lt;p&gt;Now that we have our &lt;strong&gt;raw&lt;/strong&gt; dataset ready for analysis, let’s first think little about the objectives of the next steps and what we would like our data to tell us.&lt;/p&gt;
-&lt;p&gt;So we are interested in the following main question:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Are listeners able to match the samples based on the room acoustics of the concert halls and are there differences in performances when they do this with the same and different excitation signals?&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;This question can then be broken down to different levels:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Overall results (i.e., all same and all different)&lt;/li&gt;
-&lt;li&gt;Results between MUSIC (Beethoven) and INSTR (Violin)&lt;/li&gt;
-&lt;li&gt;Possible differences between concert halls (i.e.,are some concert halls confused between each other more than others?)&lt;/li&gt;
-&lt;li&gt;Results of each individual&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;In the skinning of any dataset, a good first step is to try to plot the results in some way.&lt;/p&gt;
-&lt;p&gt;Here we will simply calculate the percentages of the correct answer per each individual and then make a boxplot of the results with ggplot. (Boxplot depicts the data with the median and the interquartile range (IQR) (Q1 (25 %) - Q3 (75%)) with whiskers extending to Q1-1.5*IQR and Q3+1.5*IQR.)&lt;/p&gt;
-&lt;p&gt;Calculate the percentages and make a corresponding data.frame:&lt;/p&gt;
-&lt;p&gt;Then make a “long”-format table with melt()-function and plot the results with ggplot.&lt;/p&gt;
-&lt;p&gt;Now we have the first view of our data. Note that as expected with randomised data the median percentages of correct answers set nicely on the change level of 1/4 = 25 %.&lt;/p&gt;
-&lt;p&gt;With another dataset one would be inclined to run a test, such as Kruskal-Wallis rank sum test (non-parametric one way anova by ranks) to test whether the distributions of the percentages of correct answers differ between the same and difference cases. Using the m1-data from above, one may run this e.g., by kruskal.test(x=m1$value, g=m1$samedifflist).&lt;/p&gt;
-&lt;p&gt;Now, besides just looking at the correct answers we can look at the actual perceived halls (ANS column) versus the true halls (REF column).&lt;/p&gt;
-&lt;p&gt;This way the experiment now presents itself as a classical multiclass classification problem, where the listeners makes class “predictions” based on one’s perceptions.&lt;/p&gt;
-&lt;p&gt;Therefore, these results are perhaps best presented and analysed in the spirit of machine learning and treated with the tools, concepts and metrics developed for the classification tasks and for the analysis of confusion matrices.&lt;/p&gt;
-&lt;div id=&#34;onto-the-confusion-matrices&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Onto the confusion matrices&lt;/h3&gt;
-&lt;p&gt;Confusion matrices can be exctracted in quite a straightforward manner from our data:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div id=&#34;analysis-with-caret-package&#34; class=&#34;section level3&#34;&gt;
-&lt;h3&gt;Analysis with caret-package&lt;/h3&gt;
-&lt;p&gt;Now that we have our set of main confusion matrices ready (we won’t be looking at individual level performance here), there a various R packages that can be used for the analysis. Here, we will be using the caret -package, and as an example, we will analyse only a single matrix.&lt;/p&gt;
-&lt;p&gt;And now we are ready to run the analysis function from the caret-pckg:&lt;/p&gt;
-&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;#### ANALYSIS:&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;As shown, the confusionMatrix()-function outputs a set of performance metrics, and information on these metrics can be found from the &lt;a href=&#34;https://en.wikipedia.org/wiki/Confusion_matrix&#34;&gt;wikipedia page&lt;/a&gt;. Also give a look &lt;a href=&#34;https://towardsdatascience.com/multi-class-metrics-made-simple-part-i-precision-and-recall-9250280bddc2&#34;&gt;here&lt;/a&gt; and &lt;a href=&#34;https://www.datascienceblog.net/post/machine-learning/performance-measures-multi-class-problems/&#34;&gt;here&lt;/a&gt; for some more tutorials on multiclass classification&lt;/p&gt;
-&lt;p&gt;Here is a very short summary about the terminology and the derivations:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;condition positive (&lt;strong&gt;P&lt;/strong&gt;) : the number of real positive cases in the data&lt;/li&gt;
-&lt;li&gt;condition negative (&lt;strong&gt;N&lt;/strong&gt;): the number of real negative cases in the data&lt;/li&gt;
-&lt;li&gt;true positive (&lt;strong&gt;TP&lt;/strong&gt;), items that are correctly classified, i.e., “hit”&lt;/li&gt;
-&lt;li&gt;true negative (&lt;strong&gt;TN&lt;/strong&gt;), items that are correctly classified as not belonging to the class, i.e. correct rejection&lt;/li&gt;
-&lt;li&gt;false positive (&lt;strong&gt;FP&lt;/strong&gt;), items that are incorrectly perceived to belong to the class, i.e., false alarm (Type I error)&lt;/li&gt;
-&lt;li&gt;false negative (&lt;strong&gt;FN&lt;/strong&gt;), items that are not perceived as belonging to the class but should have been; i.e., “miss” (Type II error)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The main metrics that may be interested in:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Accuracy&lt;/strong&gt;: The overall accuracy of the prediction (TP + TN) / P + N&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Recall&lt;/strong&gt;; &lt;strong&gt;sensitivity&lt;/strong&gt;; &lt;strong&gt;hit rate&lt;/strong&gt;; &lt;strong&gt;true positive rate&lt;/strong&gt; : the proportion of correct answers to total answers TP / P = TP / (TP + FN)&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;strong&gt;Precision&lt;/strong&gt; is the proportion of predictions that are correct from all “positive” predictions of that class TP / (TP + FP)&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Recall and precision (and other metrics) can be calculated the following table that is generated separately for each hall :&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr class=&#34;header&#34;&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;th&gt;Reference&lt;/th&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;&lt;strong&gt;Prediction&lt;/strong&gt;&lt;/td&gt;
-&lt;td&gt;Hall 1&lt;/td&gt;
-&lt;td&gt;Hall 234&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;even&#34;&gt;
-&lt;td&gt;Hall 1&lt;/td&gt;
-&lt;td&gt;A (TP)&lt;/td&gt;
-&lt;td&gt;B (FP)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&#34;odd&#34;&gt;
-&lt;td&gt;Hall 234&lt;/td&gt;
-&lt;td&gt;C (FN)&lt;/td&gt;
-&lt;td&gt;D (TN)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;And for your reference (from caret-pckg documentation)&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Sensitivity = A/(A+C)&lt;/li&gt;
-&lt;li&gt;Specificity = D/(B+D)&lt;/li&gt;
-&lt;li&gt;Prevalence = (A+C)/(A+B+C+D)&lt;/li&gt;
-&lt;li&gt;Positive Predictive Value (PPV) (same as Precision) = (sensitivity * prevalence)/((sensitivity*prevalence) + ((1-specificity)*(1-prevalence)))&lt;/li&gt;
-&lt;li&gt;Negative Preditive Value (NPV) = (specificity * (1-prevalence))/(((1-sensitivity)&lt;em&gt;prevalence) +
-((specificity)&lt;/em&gt;(1-prevalence)))&lt;/li&gt;
-&lt;li&gt;Detection Rate = A/(A+B+C+D)&lt;/li&gt;
-&lt;li&gt;Detection Prevalence = (A+B)/(A+B+C+D)&lt;/li&gt;
-&lt;li&gt;Balanced Accuracy = (sensitivity+specificity)/2&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;The output includes &lt;a href=&#34;https://en.wikipedia.org/wiki/Cohen%27s_kappa&#34;&gt;Cohen’s &lt;strong&gt;Kappa&lt;/strong&gt; statistic&lt;/a&gt; which measures the agreement between the predictions and the reference counts and it ranges from 0 to 1, so that, close to zero values indicate that the performance is not better than change level.&lt;/p&gt;
-&lt;p&gt;It is interesting that also P-value of &lt;a href=&#34;https://en.wikipedia.org/wiki/McNemar%27s_test&#34;&gt;McNemar’s test&lt;/a&gt; is included. McNemar’s test indicates whether the marginal frequecies in the confusion matrix are equal (null hypothesis) or not (alternative hypothesis). This test requires matched pairs of observations, and I do not fully understand what is the meaning here.&lt;/p&gt;
-&lt;p&gt;However, McNemar’s test is actually quite useful in many cases when one can form matched pairs from the data, and for our current analysis, there is actually another use of McNemar’s test illustrated next.&lt;/p&gt;
-&lt;p&gt;We can generate a contingengy table between the “same” and “different” sounds from our data by forming matched pairs where the same subject has made task with a particular sound and a particular concert hall as the reference sample. The following script illustrates what I mean:&lt;/p&gt;
-&lt;p&gt;In this way, McNemar’s test provides as a nice direct test statistic in terms of our question whether there is a difference between between our “same” and “different” cases.&lt;/p&gt;
-&lt;p&gt;All together the analysis of this matching data (when it is also looked at different levels) seems now to be quite exhaustive.&lt;/p&gt;
-&lt;p&gt;…&lt;/p&gt;
-&lt;p&gt;Finally, in order to have some more figures to accompany the analysis here is an example of how to illustrate the results by plotting the confusion matrices with ggplot2. (in the following, xtab2 was generated the same way as xtab.)&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;Leave a comment:&lt;/p&gt;
 &lt;script src=&#34;https://utteranc.es/client.js&#34;
@@ -716,8 +573,6 @@ grid.arrange(gsame,gdiff,nrow=1)&lt;/code&gt;&lt;/pre&gt;
         crossorigin=&#34;anonymous&#34;
         async&gt;
 &lt;/script&gt;
-&lt;/div&gt;
-&lt;/div&gt;
 </description>
     </item>
     
