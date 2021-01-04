@@ -585,7 +585,7 @@ str(chm_df)</code></pre>
 ##  $ TIME     : Factor w/ 2 levels &quot;13-Jan-2020 15:27:52&quot;,..: 2 1 1 1 1 1 1 1 1 1 ...
 ##  $ COMPLETED: int  1 0 0 0 0 0 0 0 0 0 ...
 ##  $ REP      : int  1 1 1 1 1 1 1 1 1 1 ...</code></pre>
-<p>The function <strong>str()</strong> summarises the variables and their types and so on and it is always worthwhile to check that there no some funny business going on.</p>
+<p>The function <strong>str()</strong> summarises the variables and their types and it is always worthwhile to check that there no some funny business going on.</p>
 <p>Now, instead of using only 4 individuals, I have simulated random results for 20 individuals, in the hope to better reflect the real data that we are aiming at.</p>
 <p>These simulated results have been saved in “SIMDATA.txt”, which is in the same format as the data.frame generated above.</p>
 <p>This data set will be used in the next steps of this presentation.</p>
@@ -611,7 +611,8 @@ simdata &lt;- read.table(&quot;SIMDATA.txt&quot;, sep = &quot;,&quot;, header = 
 <p>In the skinning of any dataset, a good first step is to try to plot the results in some way.</p>
 <p>Here we will simply calculate the percentages of the correct answer per each individual and then make a boxplot of the results with ggplot. (Boxplot depicts the data with the median and the interquartile range (IQR) (Q1 (25 %) - Q3 (75%)) with whiskers extending to Q1-1.5*IQR and Q3+1.5*IQR.)</p>
 <p>Calculate the percentages and make a corresponding data.frame:</p>
-<pre class="r"><code>dataf &lt;- c()
+<pre class="r"><code>SUBS &lt;- levels(simdata$SUB_ID)
+dataf &lt;- c()
 ids &lt;- c()
 for(s in levels(simdata$SUB_ID)) {
     sdata &lt;- subset(simdata, SUB_ID == s)   # EXTRACT SUBJECT DATA
@@ -635,7 +636,7 @@ for(s in levels(simdata$SUB_ID)) {
     dataf &lt;- rbind(dataf, sdvec) # POPULATE
 }
 # SOME CLEANING UP AND FINALISING OF THE DATAFRAME:
-SAMEDIFF &lt;- data.frame(matrix(as.numeric(dataf[,1:8]),nrow = 20)) 
+SAMEDIFF &lt;- data.frame(matrix(as.numeric(dataf[,1:8]),nrow = length(SUBS))) 
 colnames(SAMEDIFF) &lt;- c(names(sdtemp),names(musvec))
 SAMEDIFF &lt;- cbind(ids, SAMEDIFF)
 colnames(SAMEDIFF)[1] &lt;- &#39;ID&#39; 
@@ -799,6 +800,7 @@ rep(halls, times = c(confumat[4,1], confumat[4,2], confumat[4,3], confumat[4,4])
 levels = halls
 )
 
+# OBS: caret::confusionMatrix -function will need the data so that responses (predictions) are in the order table(Response,Reference), so responses in rows and references in cols. (Opposite of our experiment)
 xtab &lt;- table(Response,Reference)</code></pre>
 <p>And now we are ready to run the analysis function from the caret-pckg:</p>
 <pre class="r"><code>#### ANALYSIS:
