@@ -22,7 +22,6 @@
 
 &lt;!-- % This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;http://rmarkdown.rstudio.com&gt;. --&gt;
 &lt;!-- When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this: --&gt;
-&lt;p&gt;TRYING TO UPDATE&lt;/p&gt;
 &lt;p&gt;In this post I will briefly discuss and illustrate the analysis of perceptual matching experiment on concert hall acoustics. How the sound samples / auralizations of concert hall acoustics in this experiment were made is a topic of another time.&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;(This presentation is prepared for and presented in the “Acoutect Research and Demonstrator Workshop 5” held at Aalto University in 20-24 January 2020)&lt;/em&gt;&lt;/p&gt;
 &lt;div id=&#34;introduction&#34; class=&#34;section level2&#34;&gt;
@@ -61,7 +60,6 @@
 &lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;NOTE: Matching is done only within MUSIC or INSTR sounds, meaning that Beethoven is not compared to Violin sounds or vice versa.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Finally, in order to make this experiment a little more robust,&lt;/p&gt;
 &lt;p&gt;We would have liked to include one repetition of each of the trials, but because this experiment was scheduled to be run in a single afternoon with approx. 15 people, the experiment should not take more than 30 min to complete and it was necesssary to sacrifice the repetition in order to reduce the final lenght of experiment.&lt;/p&gt;
 &lt;div id=&#34;for-the-uninitialized-reading-the-data-from-.csv-files-in-r&#34; class=&#34;section level3&#34;&gt;
 &lt;h3&gt;For the uninitialized: Reading the data from .csv files in R&lt;/h3&gt;
