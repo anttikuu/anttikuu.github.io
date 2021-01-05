@@ -489,7 +489,7 @@ Introduction The background of the experiment is on our previous research on con
 <p>So here we simply asked that <em>are people able to detect and match concert halls when they are listening to same or different excitation signals?</em></p>
 <p>So, in this experiment the listener is presented with a sound that is auralized to a particular concert hall (reference), and then she/he needs to find the same concert hall among four alternatives with different or same sound auralized in those halls. Listener is also presented with the same sounds to enable comparison of performance between the different and same sounds. The experiment was implemented in Matlab. Here is a figure of the GUI:</p>
 <div class="figure">
-<img src="../../../static/img/match.png" alt="" />
+<img src="img/match.png" alt="" />
 <p class="caption">figure</p>
 </div>
 <p><img src="img/match.png" width="50%" /></p>
@@ -626,7 +626,7 @@ simdata &lt;- read.table(&quot;SIMDATA.txt&quot;, sep = &quot;,&quot;, header = 
 <li>Results of each individual</li>
 </ul>
 <p>In the skinning of any dataset, a good first step is to try to plot the results in some way.</p>
-<p>Here we will simply calculate the percentages of the correct answer per each individual and then make a boxplot of the results with ggplot. (Boxplot depicts the data with the median and the interquartile range (IQR) (Q1 (25 %) - Q3 (75%)) with whiskers extending to Q1-1.5*IQR and Q3+1.5*IQR.)</p>
+<p>Here we will simply calculate the percentages of the correct answer per each individual and then make a boxplot of the results with ggplot. (Boxplot depicts the data with the median and the interquartile range (IQR) (Q1 (25 %) - Q3 (75%)) with whiskers extending to Q1-1.5*IQR and Q3+1.5*IQR. CAUTIONARY NOTE: Boxplot is actually not the best way to illustrate this type of data, and it is not used in the article.)</p>
 <p>Calculate the percentages and make a corresponding data.frame:</p>
 <pre class="r"><code>SUBS &lt;- levels(simdata$SUB_ID)
 dataf &lt;- c()
