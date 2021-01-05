@@ -31,10 +31,7 @@
 &lt;p&gt;However, the acoustic “teleportation” is only possible at the lab, and in natural environments we may perceptually evaluate the acoustical characteristics and differences between spaces only by physically moving from one place to another, for instance, from concert hall to concert hall. And aside from research projects, seldom exactly the same sounds are listened to, but commonly our perceptions and assessments of room acoustical qualities are based on the experience of different sounds in the different rooms.&lt;/p&gt;
 &lt;p&gt;So here we simply asked that &lt;em&gt;are people able to detect and match concert halls when they are listening to same or different excitation signals?&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;So, in this experiment the listener is presented with a sound that is auralized to a particular concert hall (reference), and then she/he needs to find the same concert hall among four alternatives with different or same sound auralized in those halls. Listener is also presented with the same sounds to enable comparison of performance between the different and same sounds. The experiment was implemented in Matlab. Here is a figure of the GUI:&lt;/p&gt;
-&lt;div class=&#34;figure&#34;&gt;
-&lt;img src=&#34;./img/match.png&#34; style=&#34;width:50.0%&#34; alt=&#34;&#34; /&gt;
-&lt;p class=&#34;caption&#34;&gt;figure&lt;/p&gt;
-&lt;/div&gt;
+&lt;p&gt;&lt;img src=&#34;./img/match.png&#34; style=&#34;width:50.0%&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;The experiment is constructed with the following variables:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Four concert halls coded as “AC”, “BP”, “CP”, “MH”.
