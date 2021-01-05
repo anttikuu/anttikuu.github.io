@@ -28,7 +28,7 @@
   
     
   
-  <meta name="description" content=". -- Last September (2020) we published the article “Recognizing individual concert halls is difficult when listening to the acoustics with different musical passages”. For this work I also experimented with RShiny to see if it could be used for making online listening experiments. Originally the idea was to facilitate the review process, so that, the reviewers could go and have a listen for themselves to get at better idea of the experiment and what was being listened to.">
+  <meta name="description" content=". -- Last September (2020) we published the article “Recognizing individual concert halls is difficult when listening to the acoustics with different musical passages”. The title already tells a lot of this experiment, where the subjects were required to recognize halls just by listening to the acoustics of the halls, but in cases where the sounds (i.e. excitation of the hall acoustics) were exactly the same, or somewhat different (see the article for more details.">
 
   
   <link rel="alternate" hreflang="en-us" href="https://anttikuusinen.github.io/post/2021-04-01-onlinematching/2021-04-01-onlinematching/">
@@ -149,7 +149,7 @@
   <meta property="og:site_name" content="Antti Kuusinen">
   <meta property="og:url" content="https://anttikuusinen.github.io/post/2021-04-01-onlinematching/2021-04-01-onlinematching/">
   <meta property="og:title" content="Online recognition of concert hall acoustics listening experiment | Antti Kuusinen">
-  <meta property="og:description" content=". -- Last September (2020) we published the article “Recognizing individual concert halls is difficult when listening to the acoustics with different musical passages”. For this work I also experimented with RShiny to see if it could be used for making online listening experiments. Originally the idea was to facilitate the review process, so that, the reviewers could go and have a listen for themselves to get at better idea of the experiment and what was being listened to."><meta property="og:image" content="https://anttikuusinen.github.io/img/icon-192.png">
+  <meta property="og:description" content=". -- Last September (2020) we published the article “Recognizing individual concert halls is difficult when listening to the acoustics with different musical passages”. The title already tells a lot of this experiment, where the subjects were required to recognize halls just by listening to the acoustics of the halls, but in cases where the sounds (i.e. excitation of the hall acoustics) were exactly the same, or somewhat different (see the article for more details."><meta property="og:image" content="https://anttikuusinen.github.io/img/icon-192.png">
   <meta property="twitter:image" content="https://anttikuusinen.github.io/img/icon-192.png"><meta property="og:locale" content="en-us">
   
     
@@ -201,7 +201,7 @@
       "url": "https://anttikuusinen.github.io/img/icon-512.png"
     }
   },
-  "description": ". -- Last September (2020) we published the article “Recognizing individual concert halls is difficult when listening to the acoustics with different musical passages”. For this work I also experimented with RShiny to see if it could be used for making online listening experiments. Originally the idea was to facilitate the review process, so that, the reviewers could go and have a listen for themselves to get at better idea of the experiment and what was being listened to."
+  "description": ". -- Last September (2020) we published the article “Recognizing individual concert halls is difficult when listening to the acoustics with different musical passages”. The title already tells a lot of this experiment, where the subjects were required to recognize halls just by listening to the acoustics of the halls, but in cases where the sounds (i.e. excitation of the hall acoustics) were exactly the same, or somewhat different (see the article for more details."
 }
 </script>
 
@@ -475,10 +475,12 @@
 
 <!-- % This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>. -->
 <!-- When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this: -->
-<p>Last September (2020) we published the article <a href="https://asa.scitation.org/doi/10.1121/10.0001915">“Recognizing individual concert halls is difficult when listening to the acoustics with different musical passages”</a>. For this work I also experimented with <a href="https://shiny.rstudio.com/">RShiny</a> to see if it could be used for making online listening experiments. Originally the idea was to facilitate the review process, so that, the reviewers could go and have a listen for themselves to get at better idea of the experiment and what was being listened to. Here is link to this <a href="https://anttikuusinen.shinyapps.io/RoomAcousticsMatchingExperiment/">online test</a>.</p>
-<p>We were also fortunate to publish another article shortly agter: <a href="https://asa.scitation.org/doi/full/10.1121/10.0002101">Perception of loudness and envelopment for different orchestral dynamics</a>, so that this work gained some momentum and was noted with
+<p>Last September (2020) we published the article <a href="https://asa.scitation.org/doi/10.1121/10.0001915">“Recognizing individual concert halls is difficult when listening to the acoustics with different musical passages”</a>. The title already tells a lot of this experiment, where the subjects were required to recognize halls just by listening to the acoustics of the halls, but in cases where the sounds (i.e. excitation of the hall acoustics) were exactly the same, or somewhat different (see the article for more details.). The following figure summarises the main results:</p>
+<p><img src="../../../img/confures.png" /></p>
+<p>Anyway, for this work I also experimented with <a href="https://shiny.rstudio.com/">RShiny</a> to see if it can be used for making online listening experiments. Originally the idea was only to facilitate the review process, so that, the reviewers could go and have a listen for themselves to get at better idea of the experiment and what was being listened to. Here is link to this <a href="https://anttikuusinen.shinyapps.io/RoomAcousticsMatchingExperiment/">online test</a>.</p>
+<p>However, we were also fortunate to publish another article shortly after: <a href="https://asa.scitation.org/doi/full/10.1121/10.0002101">Perception of loudness and envelopment for different orchestral dynamics</a>. And all together these studies gained some momentum and was noted with
 <a href="https://www.aalto.fi/en/news/can-you-identify-which-concert-hall-this-music-is-being-played-in-test-to-see">a press release</a> and was spread out more widely.</p>
-<p>Unfortunately the test is overly long for most people to finish in realistic time. So, I have now been even more excited to see that quite a few (39 people) have actually finished the online test and here I will shortly look at the results.(Note, that analysing this type if data in R was already discussed in the <a href="https://anttikuusinen.github.io/post/2020-22-01-chm/2020-22-01-chm/">previous post</a>, so here, I will just cover the main results of the online listening experiment.</p>
+<p>Unfortunately, I did realize that the online test is overly long for most people to finish in realistic time, and I suspect that there have been quite a lot of people who have started the test but not completed. Nevertheless, there are now 39 people who have completed the online test and I will shortly look at the results here.(Note, that analyzing this type if data in R was already discussed in the <a href="https://anttikuusinen.github.io/post/2020-22-01-chm/2020-22-01-chm/">previous post</a>, so here, I will just cover the main results of the online listening experiment.</p>
 <hr />
 <p>Leave a comment:</p>
 <script src="https://utteranc.es/client.js"
