@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>confusion matrix | Antti Kuusinen</title>
-    <link>https://anttikuusinen.github.io/tags/confusion-matrix/</link>
-      <atom:link href="https://anttikuusinen.github.io/tags/confusion-matrix/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/confusion-matrix/</link>
+      <atom:link href="/tags/confusion-matrix/index.xml" rel="self" type="application/rss+xml" />
     <description>confusion matrix</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2021</copyright><lastBuildDate>Wed, 22 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://anttikuusinen.github.io/img/icon-192.png</url>
+      <url>/img/icon-192.png</url>
       <title>confusion matrix</title>
-      <link>https://anttikuusinen.github.io/tags/confusion-matrix/</link>
+      <link>/tags/confusion-matrix/</link>
     </image>
     
     <item>
       <title>On the data analysis of perceptual matching of concert hall acoustics</title>
-      <link>https://anttikuusinen.github.io/post/2020-22-01-chm/2020-22-01-chm/</link>
+      <link>/post/2020-22-01-chm/2020-22-01-chm/</link>
       <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://anttikuusinen.github.io/post/2020-22-01-chm/2020-22-01-chm/</guid>
+      <guid>/post/2020-22-01-chm/2020-22-01-chm/</guid>
       <description>
 
 
@@ -546,44 +546,6 @@ grid.arrange(gsame,gdiff,nrow=1)&lt;/code&gt;&lt;/pre&gt;
         async&gt;
 &lt;/script&gt;
 &lt;/div&gt;
-&lt;/div&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Online recognition of concert hall acoustics listening experiment</title>
-      <link>https://anttikuusinen.github.io/post/2021-04-01-onlinematching/2021-04-01-onlinematching/</link>
-      <pubDate>Sat, 04 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>https://anttikuusinen.github.io/post/2021-04-01-onlinematching/2021-04-01-onlinematching/</guid>
-      <description>
-
-
-&lt;!-- % This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;http://rmarkdown.rstudio.com&gt;. --&gt;
-&lt;!-- When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this: --&gt;
-&lt;p&gt;Last September (2020) we published the article &lt;a href=&#34;https://asa.scitation.org/doi/10.1121/10.0001915&#34;&gt;“Recognizing individual concert halls is difficult when listening to the acoustics with different musical passages”&lt;/a&gt;. The title already tells a lot of this experiment, where the subjects were required to recognize halls just by listening to the acoustics of the halls, but in cases where the sounds (i.e. excitation of the hall acoustics) were exactly the same, or somewhat different (see the article for more details.).&lt;/p&gt;
-&lt;p&gt;The following figures summarise the main results:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../img/Means_and_CIs.png&#34; style=&#34;width:35.0%&#34; /&gt;
-&lt;font size = &#34;1&#34;&gt;FIG. 6. Overall results: The mean proportion of correct answers with confidence intervals derived from the binomial distribution with normal approxi- mation. Data are pooled over all individuals and each observation is treated as an independent binary (correct/incorrect) observation. Brackets and asterisks (***p &amp;lt; 0.001) denote significant differences in the proportions of correct responses between the conditions.&lt;/font&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../img/confures.png&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;In any case, the story is that for this work I also experimented with &lt;a href=&#34;https://shiny.rstudio.com/&#34;&gt;RShiny&lt;/a&gt; to see if it can be used for making online listening experiments. Originally the idea was only to facilitate the review process, so that, the reviewers could go and have a listen for themselves. Here is link to this &lt;a href=&#34;https://anttikuusinen.shinyapps.io/RoomAcousticsMatchingExperiment/&#34;&gt;online test&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;However, we were also fortunate to publish another article shortly after: &lt;a href=&#34;https://asa.scitation.org/doi/full/10.1121/10.0002101&#34;&gt;Perception of loudness and envelopment for different orchestral dynamics&lt;/a&gt;. All together these two studies gained some momentum and was noted with
-&lt;a href=&#34;https://www.aalto.fi/en/news/can-you-identify-which-concert-hall-this-music-is-being-played-in-test-to-see&#34;&gt;a press release&lt;/a&gt; to be spread out more widely.&lt;/p&gt;
-&lt;p&gt;Unfortunately, only in the aftermath I did realize that the online test is overly long for most people to finish in realistic time, and I suspect that there have been quite a lot of people who have started the test but not completed. Nevertheless, I happy that some people have taken the time and there are now 39 people who have completed the online test. I will shortly look at the results here. (Note, that analyzing this type if data in R was already discussed in the &lt;a href=&#34;https://anttikuusinen.github.io/post/2020-22-01-chm/2020-22-01-chm/&#34;&gt;previous post&lt;/a&gt;, so here, I will just cover the main results of the online listening experiment.&lt;/p&gt;
-&lt;p&gt;So, here are the results in the similar figures as above:&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;../../img/Means_and_CIs_RSHINY.png&#34; style=&#34;width:35.0%&#34; /&gt;
-&lt;img src=&#34;../../img/CONFUMAT1_perMUSIC_RSHINY.png&#34; /&gt;
-Basically these are in the similar lines than in the article. The&lt;/p&gt;
-&lt;p&gt;Binomial test results.&lt;/p&gt;
-&lt;div id=&#34;link-to-the-new-experiment&#34; class=&#34;section level2&#34;&gt;
-&lt;h2&gt;Link to the new experiment:&lt;/h2&gt;
-&lt;p&gt;Leave a comment:&lt;/p&gt;
-&lt;script src=&#34;https://utteranc.es/client.js&#34;
-        repo=&#34;anttikuusinen/anttikuusinen.github.io&#34;
-        issue-term=&#34;[CHMdata]&#34;
-        theme=&#34;github-light&#34;
-        crossorigin=&#34;anonymous&#34;
-        async&gt;
-&lt;/script&gt;
 &lt;/div&gt;
 </description>
     </item>

@@ -3,75 +3,80 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://anttikuusinen.github.io/</loc>
+    <loc>/</loc>
+    <lastmod>2021-01-05T11:56:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/</loc>
+    <lastmod>2021-01-05T11:56:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/post/sin-tests-on-the-simulation-of-adaptive-1up-1down-procedure-with-differerent-rule/</loc>
+    <lastmod>2021-01-05T11:56:32+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/categories/</loc>
     <lastmod>2020-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://anttikuusinen.github.io/categories/</loc>
+    <loc>/tags/classification/</loc>
     <lastmod>2020-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://anttikuusinen.github.io/tags/classification/</loc>
+    <loc>/tags/confusion-matrix/</loc>
     <lastmod>2020-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://anttikuusinen.github.io/tags/confusion-matrix/</loc>
+    <loc>/categories/data-analysis/</loc>
     <lastmod>2020-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://anttikuusinen.github.io/categories/data-analysis/</loc>
+    <loc>/tags/data-preprocessing/</loc>
     <lastmod>2020-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://anttikuusinen.github.io/tags/data-preprocessing/</loc>
+    <loc>/post/2020-22-01-chm/2020-22-01-chm/</loc>
     <lastmod>2020-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://anttikuusinen.github.io/post/2020-22-01-chm/2020-22-01-chm/</loc>
+    <loc>/categories/r/</loc>
     <lastmod>2020-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://anttikuusinen.github.io/post/</loc>
+    <loc>/tags/r-markdown/</loc>
     <lastmod>2020-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://anttikuusinen.github.io/categories/r/</loc>
+    <loc>/tags/</loc>
     <lastmod>2020-01-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://anttikuusinen.github.io/tags/r-markdown/</loc>
-    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+    <loc>/authors/admin/</loc>
   </url>
   
   <url>
-    <loc>https://anttikuusinen.github.io/tags/</loc>
-    <lastmod>2020-01-22T00:00:00+00:00</lastmod>
+    <loc>/post/2021-04-01-onlinematching/2021-04-01-onlinematching/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://anttikuusinen.github.io/post/2021-04-01-onlinematching/2021-04-01-onlinematching/</loc>
-    <lastmod>2020-01-04T00:00:00+00:00</lastmod>
+    <loc>/authors/</loc>
   </url>
   
   <url>
-    <loc>https://anttikuusinen.github.io/authors/admin/</loc>
-  </url>
-  
-  <url>
-    <loc>https://anttikuusinen.github.io/authors/</loc>
-  </url>
-  
-  <url>
-    <loc>https://anttikuusinen.github.io/publication_types/</loc>
+    <loc>/publication_types/</loc>
   </url>
   
 </urlset>
