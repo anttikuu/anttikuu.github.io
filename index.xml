@@ -572,8 +572,10 @@ grid.arrange(gsame,gdiff,nrow=1)&lt;/code&gt;&lt;/pre&gt;
 
 &lt;!-- % This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;http://rmarkdown.rstudio.com&gt;. --&gt;
 &lt;!-- When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this: --&gt;
-&lt;p&gt;Last September (2020) we published the article &lt;a href=&#34;https://asa.scitation.org/doi/10.1121/10.0001915&#34;&gt;“Recognizing individual concert halls is difficult when listening to the acoustics with different musical passages”&lt;/a&gt;. The title already tells a lot of this experiment, where the subjects were required to recognize halls just by listening to the acoustics of the halls, but in cases where the sounds (i.e. excitation of the hall acoustics) were exactly the same, or somewhat different (see the article for more details.).&lt;/p&gt;
-&lt;p&gt;The following figures summarise the main results:&lt;/p&gt;
+&lt;div id=&#34;note-there-is-now-a-second-version-of-this-online-listening-experiment.&#34; class=&#34;section level2&#34;&gt;
+&lt;h2&gt;(NOTE: THERE IS NOW A &lt;a href=&#34;https://anttikuusinen.shinyapps.io/MatchingTest2/&#34;&gt;SECOND VERSION&lt;/a&gt; OF THIS ONLINE LISTENING EXPERIMENT.)&lt;/h2&gt;
+&lt;p&gt;Last September (2020) we published the article &lt;a href=&#34;https://asa.scitation.org/doi/10.1121/10.0001915&#34;&gt;“Recognizing individual concert halls is difficult when listening to the acoustics with different musical passages”&lt;/a&gt;. The title already tells a lot of this experiment, where the subjects were required to recognize halls just by listening to the room acoustics, but so that the sounds (i.e. excitations) were either exactly the same or different. The sound materials included an excerpt of a Beethoven symphony, and short samples of a single violin (see the article for more details).&lt;/p&gt;
+&lt;p&gt;The following figures summarise the main results presented in the article:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./img/Means_and_CIs.png&#34; style=&#34;width:35.0%&#34; /&gt;
 &lt;font size = &#34;1&#34;&gt;FIG. 6. Overall results: The mean proportion of correct answers with confidence intervals derived from the binomial distribution with normal approxi- mation. Data are pooled over all individuals and each observation is treated as an independent binary (correct/incorrect) observation. Brackets and asterisks (***p &amp;lt; 0.001) denote significant differences in the proportions of correct responses between the conditions.&lt;/font&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./img/confures.png&#34; /&gt;&lt;/p&gt;
@@ -581,10 +583,12 @@ grid.arrange(gsame,gdiff,nrow=1)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;However, we were also fortunate to publish another article shortly after: &lt;a href=&#34;https://asa.scitation.org/doi/full/10.1121/10.0002101&#34;&gt;Perception of loudness and envelopment for different orchestral dynamics&lt;/a&gt;. All together these two studies gained some momentum and was noted with
 &lt;a href=&#34;https://www.aalto.fi/en/news/can-you-identify-which-concert-hall-this-music-is-being-played-in-test-to-see&#34;&gt;a press release&lt;/a&gt; to be spread out more widely.&lt;/p&gt;
 &lt;p&gt;Unfortunately, only in the aftermath I did realize that the online test is overly long for most people to finish in realistic time, and I suspect that there have been quite a lot of people who have started the test but not completed. Nevertheless, I happy to note that there are now 40 people who have taken the time and completed the online test. I will shortly look at the results here. (Note, that analyzing this type if data in R was already discussed in the &lt;a href=&#34;https://anttikuusinen.github.io/post/2020-22-01-chm/2020-22-01-chm/&#34;&gt;previous post&lt;/a&gt;, so here, I will just cover the main results of the online listening experiment.&lt;/p&gt;
-&lt;p&gt;So, here are the results in the similar figures as above:&lt;/p&gt;
-&lt;p&gt;Basically these results follow those presented in the article, but they are much worse. As mentioned, the test was relatively long, so I suspect that these results are affected by the length of the experiment.&lt;/p&gt;
+&lt;p&gt;So, here are the results (in the similar figures as above):&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./post/2021-04-01-onlinematching/2021-04-01-onlinematching_files/figure-html/unnamed-chunk-1-1.png&#34; width=&#34;288&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./post/2021-04-01-onlinematching/2021-04-01-onlinematching_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;So, basically these results follow those presented in the article, but they are much worse. As mentioned, the test was relatively long, so I suspect that these results are affected by the length of the experiment, and probably by the fact that the stimuli in the online test were binaural auralizations while the main experiment was carried out in the multichannel anechoic listening chamber at the &lt;a href=&#34;https://www.aalto.fi/en/aalto-acoustics-lab&#34;&gt;Aalto Acoustics Lab&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Nevertheless, these results also indicate that the recognition task was much more difficult when the sounds were different, than when they were the same. This can also be quantified with the binomial tests. (We make the assumption that all trials are independent, which is perhaps not strictly true.)&lt;/p&gt;
+&lt;p&gt;Exact binomial test for the “same”-condition:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## 
 ##  Exact binomial test
 ## 
@@ -596,6 +600,7 @@ grid.arrange(gsame,gdiff,nrow=1)&lt;/code&gt;&lt;/pre&gt;
 ## sample estimates:
 ## probability of success 
 ##              0.4796875&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Exact binomial test for the “diff”-condition:&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;## 
 ##  Exact binomial test
 ## 
@@ -607,8 +612,23 @@ grid.arrange(gsame,gdiff,nrow=1)&lt;/code&gt;&lt;/pre&gt;
 ## sample estimates:
 ## probability of success 
 ##               0.290625&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Nevertheless, in the same-condition,&lt;/p&gt;
-&lt;p&gt;Binomial test results.&lt;/p&gt;
+&lt;p&gt;These results show clearly that people could recognize the halls above the level of pure chance in the “same” -condition. In the “diff”-condition, the result is significant with p-value of 0.01, so it seems that people could tease out the correct hall, but not very consistently. This is also apparent in the confusion matrices above.&lt;/p&gt;
+&lt;p&gt;The difference between the “same” and “diff” results is perhaps self-evident, but we can still verify it with the Chi-Squared test for two proportions:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;## 
+##  2-sample test for given proportions with continuity correction
+## 
+## data:  c(same_corn, diff_corn) out of c(same_totn, diff_totn), null probabilities c(1/4, 1/4)
+## X-squared = 184.27, df = 2, p-value &amp;lt; 2.2e-16
+## alternative hypothesis: two.sided
+## null values:
+## prop 1 prop 2 
+##   0.25   0.25 
+## sample estimates:
+##    prop 1    prop 2 
+## 0.4796875 0.2906250&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As mentioned, this online experiment was excessively long, so I don’t continue with any further analyses here.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;/div&gt;
 &lt;div id=&#34;link-to-the-new-experiment.&#34; class=&#34;section level2&#34;&gt;
 &lt;h2&gt;Link to the &lt;a href=&#34;https://anttikuusinen.shinyapps.io/MatchingTest2/&#34;&gt;new experiment&lt;/a&gt;.&lt;/h2&gt;
 &lt;p&gt;Leave a comment:&lt;/p&gt;
