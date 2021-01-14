@@ -2,31 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories | Antti Kuusinen</title>
-    <link>/categories/</link>
-      <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://anttikuusinen.github.io/categories/</link>
+      <atom:link href="https://anttikuusinen.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <description>Categories</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2021</copyright><lastBuildDate>Wed, 22 Jan 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://anttikuusinen.github.io/img/icon-192.png</url>
       <title>Categories</title>
-      <link>/categories/</link>
+      <link>https://anttikuusinen.github.io/categories/</link>
     </image>
-    
-    <item>
-      <title>Data analysis</title>
-      <link>/categories/data-analysis/</link>
-      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/categories/data-analysis/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>R</title>
-      <link>/categories/r/</link>
-      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/categories/r/</guid>
-      <description></description>
-    </item>
     
   </channel>
 </rss>
