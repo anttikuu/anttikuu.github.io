@@ -583,8 +583,13 @@ grid.arrange(gsame,gdiff,nrow=1)&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;In any case, the story is that for this work I also experimented with &lt;a href=&#34;https://shiny.rstudio.com/&#34;&gt;RShiny&lt;/a&gt; to see if it can be used for making online listening experiments. Originally the idea was only to facilitate the review process, so that, the reviewers could go and have a listen for themselves. Here is link to this &lt;a href=&#34;https://anttikuusinen.shinyapps.io/RoomAcousticsMatchingExperiment/&#34;&gt;online test&lt;/a&gt;.&lt;/p&gt;
 &lt;!-- However, we were also fortunate to publish another article shortly after: [Perception of loudness and envelopment for different orchestral dynamics](https://asa.scitation.org/doi/full/10.1121/10.0002101). All together these  two studies gained some momentum and was noted with
 [a press release](https://www.aalto.fi/en/news/can-you-identify-which-concert-hall-this-music-is-being-played-in-test-to-see) to be spread out more widely.--&gt;
-&lt;p&gt;The online test was basically a copy of the live experiment (with some number of extra unknown variables), but unfortunately, i feel that it was excessively long to be directly transferred online. I suspect that there have been quite a lot of people who may have started the test but never completed. But I am happy to note that there are now as much as 40 people who have taken the time and completed. This amounts to the following dataset: (You can download this dataset &lt;a href=&#34;./files/RSHINYresults.txt&#34;&gt;here&lt;/a&gt;).
-&lt;a href = &#34;/files/RSHINYresults.txt&#34; download&gt;here &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The online test was basically a copy of the live experiment (with some number of extra unknown variables), but unfortunately, i feel that it was excessively long to be directly transferred online. I suspect that there have been quite a lot of people who may have started the test but never completed. But I am happy to note that there are now as much as 40 people who have taken the time and completed. This amounts to a dataset, that can be summarized : (You can download this dataset
+&lt;a href=&#34;./files/RSHINYresults.txt&#34; download&gt;here &lt;/a&gt;.&lt;/p&gt;
+&lt;pre class=&#34;r&#34;&gt;&lt;code&gt;# First remove variables from workspace
+rm(list = ls()) 
+# and read the data.table:
+chm_df &amp;lt;- read.table(&amp;quot;RSHINYresults.txt&amp;quot;, sep = &amp;quot;,&amp;quot;, header = T,stringsAsFactors = T)
+summary(chm_df)&lt;/code&gt;&lt;/pre&gt;
 &lt;pre&gt;&lt;code&gt;##      SUB_ID          ORD           CASE_ID      SOUNDTYPE      SOUNDNUM    
 ##  4GwhMP :  32   Min.   : 1.00   Min.   : 1.00   INSTR:640   Min.   : 0.00  
 ##  56IycUX:  32   1st Qu.: 8.75   1st Qu.: 8.75   MUSIC:640   1st Qu.: 0.00  
@@ -602,22 +607,22 @@ grid.arrange(gsame,gdiff,nrow=1)&lt;/code&gt;&lt;/pre&gt;
 ##                                                                           
 ##                                                                           
 ##   D       ANS         CORRECT                        TIME        COMPLETED
-##  AC:340   AC:304   Min.   :0.0000   2020-11-10 18:16:47:   1   Min.   :0  
-##  BP:330   BP:339   1st Qu.:0.0000   2020-11-10 18:18:57:   1   1st Qu.:0  
-##  CP:307   CP:350   Median :0.0000   2020-11-10 18:20:44:   1   Median :0  
-##  MH:303   MH:287   Mean   :0.3852   2020-11-10 18:21:58:   1   Mean   :0  
-##                    3rd Qu.:1.0000   2020-11-10 18:24:45:   1   3rd Qu.:0  
-##                    Max.   :1.0000   2020-11-10 18:25:05:   1   Max.   :0  
+##  AC:340   AC:304   Min.   :0.0000   2020-11-02 11:28:29:   1   Min.   :0  
+##  BP:330   BP:339   1st Qu.:0.0000   2020-11-02 11:31:09:   1   1st Qu.:0  
+##  CP:307   CP:350   Median :0.0000   2020-11-02 11:32:28:   1   Median :0  
+##  MH:303   MH:287   Mean   :0.3852   2020-11-02 11:33:53:   1   Mean   :0  
+##                    3rd Qu.:1.0000   2020-11-02 11:35:16:   1   3rd Qu.:0  
+##                    Max.   :1.0000   2020-11-02 11:35:49:   1   Max.   :0  
 ##                                     (Other)            :1274              
-##       REP             EXPERTICE                   HEADPHONE  
-##  Min.   :0.00   experienced:512   Audiotechnica ATH-M5X: 32  
-##  1st Qu.:0.75   novice     :416   AKG801               : 32  
-##  Median :1.00   expert     :192   Sennheiser HD 580    : 32  
-##  Mean   :0.75   none       : 96   FOCAL Spirit One     : 32  
-##  3rd Qu.:1.00   NA&amp;#39;s       : 64   Superlux HD681       : 32  
-##  Max.   :1.00                     (Other)              :800  
-##                                   NA&amp;#39;s                 :320&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;I think it is a good time, . (Note, that analyzing this type if data in R was already discussed in the &lt;a href=&#34;https://anttikuusinen.github.io/post/2020-22-01-chm/2020-22-01-chm/&#34;&gt;previous post&lt;/a&gt;, so here, I will just cover the main results of the online listening experiment.&lt;/p&gt;
+##       REP             EXPERTICE             HEADPHONE  
+##  Min.   :0.00   experienced:512   AKG 240DF      : 32  
+##  1st Qu.:0.75   expert     :192   AKG K240 Studio: 32  
+##  Median :1.00   none       : 96   AKG K501       : 32  
+##  Mean   :0.75   novice     :416   AKG801         : 32  
+##  3rd Qu.:1.00   NA&amp;#39;s       : 64   AirPod Pro     : 32  
+##  Max.   :1.00                     (Other)        :800  
+##                                   NA&amp;#39;s           :320&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;In total we have now 1280 datapoints, so I think this is fair amount of data to look at. Note, that analyzing this type if data in R was already discussed in the &lt;a href=&#34;https://anttikuusinen.github.io/post/2020-22-01-chm/2020-22-01-chm/&#34;&gt;previous post&lt;/a&gt;, so here, I will just cover the main results of the online listening experiment.&lt;/p&gt;
 &lt;p&gt;So, here are the results (in the similar figures as above):&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./post/2021-04-01-onlinematching/2021-04-01-onlinematching_files/figure-html/unnamed-chunk-2-1.png&#34; width=&#34;288&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./post/2021-04-01-onlinematching/2021-04-01-onlinematching_files/figure-html/unnamed-chunk-3-1.png&#34; width=&#34;768&#34; /&gt;&lt;/p&gt;
