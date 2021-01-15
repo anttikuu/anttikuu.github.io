@@ -515,8 +515,7 @@
 <p>In any case, the story is that for this work I also experimented with <a href="https://shiny.rstudio.com/">RShiny</a> to see if it can be used for making online listening experiments. Originally the idea was only to facilitate the review process, so that, the reviewers could go and have a listen for themselves. Here is link to this <a href="https://anttikuusinen.shinyapps.io/RoomAcousticsMatchingExperiment/">online test</a>.</p>
 <!-- However, we were also fortunate to publish another article shortly after: [Perception of loudness and envelopment for different orchestral dynamics](https://asa.scitation.org/doi/full/10.1121/10.0002101). All together these  two studies gained some momentum and was noted with
 [a press release](https://www.aalto.fi/en/news/can-you-identify-which-concert-hall-this-music-is-being-played-in-test-to-see) to be spread out more widely.-->
-<p>The online test was basically a copy of the live experiment (with some number of extra unknown variables), but unfortunately, i feel that it was excessively long to be directly transferred online. I suspect that there have been quite a lot of people who may have started the test but never completed. But I am happy to note that there are now as much as 40 people who have taken the time and completed. This amounts to a dataset, that can be summarized : (You can download this dataset
-<a href="../../../files/RSHINYresults.txt" download>here </a>.</p>
+<p>The online test was basically a copy of the live experiment (with some number of extra unknown variables), but unfortunately, i feel that it was excessively long to be directly transferred online. I suspect that there have been quite a lot of people who may have started the test but never completed. But I am happy to note that there are now as much as 40 people who have taken the time and completed. This amounts to a dataset, that can be summarized as follows:</p>
 <pre class="r"><code># First remove variables from workspace
 rm(list = ls()) 
 # and read the data.table:
@@ -554,12 +553,13 @@ summary(chm_df)</code></pre>
 ##  3rd Qu.:1.00   NA&#39;s       : 64   AirPod Pro     : 32  
 ##  Max.   :1.00                     (Other)        :800  
 ##                                   NA&#39;s           :320</code></pre>
-<p>In total we have now 1280 datapoints, so I think this is fair amount of data to look at. Note, that analyzing this type if data in R was already discussed in the <a href="https://anttikuusinen.github.io/post/2020-22-01-chm/2020-22-01-chm/">previous post</a>, so here, I will just cover the main results of the online listening experiment.</p>
-<p>So, here are the results (in the similar figures as above):</p>
-<p><img src="../../../post/2021-04-01-onlinematching/2021-04-01-onlinematching_files/figure-html/unnamed-chunk-2-1.png" width="288" /></p>
+<p>(You can download this dataset <a href="../../../files/RSHINYresults.txt" download>here </a>.)</p>
+<p>In total we have now 1280 data points, and I think this is fair amount of data to skim through. Note, that analyzing this type if data in R was already discussed in the <a href="https://anttikuusinen.github.io/post/2020-22-01-chm/2020-22-01-chm/">previous post</a>, so here, I will just cover the main results of the online listening experiment.</p>
+<p>So, here are the results (in the similar figures as in the article):
+<img src="../../../post/2021-04-01-onlinematching/2021-04-01-onlinematching_files/figure-html/unnamed-chunk-2-1.png" width="288" /></p>
 <p><img src="../../../post/2021-04-01-onlinematching/2021-04-01-onlinematching_files/figure-html/unnamed-chunk-3-1.png" width="768" /></p>
-<p>So, basically these results follow those presented in the article, but they are much worse. As mentioned, the test was relatively long, so I suspect that these results are affected by the length of the experiment, and probably by the fact that the stimuli in the online test were binaural auralizations while the main experiment was carried out in the multichannel anechoic listening chamber at the <a href="https://www.aalto.fi/en/aalto-acoustics-lab">Aalto Acoustics Lab</a>.</p>
-<p>Nevertheless, these results also indicate that the recognition task was much more difficult when the sounds were different, than when they were the same. This can also be quantified with the binomial tests. (We make the assumption that all trials are independent, which is perhaps not strictly true.)</p>
+<p>So, basically these results follow those presented in the article, but they are much worse. As mentioned, the test was relatively long to be performed online, so I suspect that these results are affected by the length of the experiment. Of course there is also the fact that the stimuli in the online test were binaural auralizations while the main experiment was carried out in the multichannel anechoic listening chamber at the <a href="https://www.aalto.fi/en/aalto-acoustics-lab">Aalto Acoustics Lab</a>. The multichannel chamber and the reproduction setup is critical when it comes to perceptually analysing small changes in the sound, and when listening to these samples myself, I can say that the binaural stimuli makes the task that more difficult.</p>
+<p>Nevertheless, these results are in line with the article, and indicate that the recognition task was much more difficult when the sounds were different, than when they were the same. This can also be quantified with the binomial tests. (We make the assumption that all trials are independent, which is perhaps not strictly true.)</p>
 <p>Exact binomial test for the “same”-condition:</p>
 <pre><code>## 
 ##  Exact binomial test
@@ -584,8 +584,8 @@ summary(chm_df)</code></pre>
 ## sample estimates:
 ## probability of success 
 ##               0.290625</code></pre>
-<p>These results show clearly that people could recognize the halls above the level of pure chance in the “same” -condition. In the “diff”-condition, the result is significant with p-value of 0.01, so it seems that people could tease out the correct hall, but not very consistently. This is also apparent in the confusion matrices above.</p>
-<p>The difference between the “same” and “diff” results is perhaps self-evident, but we can still verify it with the Chi-Squared test for two proportions:</p>
+<p>These results show clearly that people could recognize the halls above the level of chance (i.e., 1/4) in the “same” -condition. In the “diff”-condition, the result is still significant with p-value of 0.01, so it seems that people i tis not totally random and people could perhaps tease out the correct hall, but not very consistently. This is also apparent in the confusion matrices above.</p>
+<p>The difference between the “same” and “diff” conditions is perhaps self-evident, but we can still verify it by testing if the two proportions are equal. We use the Chi-Squared test for two proportions:</p>
 <pre><code>## 
 ##  2-sample test for given proportions with continuity correction
 ## 
@@ -599,10 +599,8 @@ summary(chm_df)</code></pre>
 ##    prop 1    prop 2 
 ## 0.4796875 0.2906250</code></pre>
 <p>As mentioned, this online experiment was excessively long, so I don’t continue with any further analyses here.</p>
-<hr />
-</div>
-<div id="link-to-the-new-experiment." class="section level2">
-<h2>Link to the <a href="https://anttikuusinen.shinyapps.io/MatchingTest2/">new experiment</a>.</h2>
+<p>You can download this dataset <a href="../../../files/RSHINYresults.txt" download>here </a> if you want to take a closer look.</p>
+<p>Finally, I am still continuing this research with another experiment, that includes another set of sounds and is now considerably shorter. Please participate!</p>
 <p>Leave a comment:</p>
 <script src="https://utteranc.es/client.js"
         repo="anttikuusinen/anttikuusinen.github.io"
