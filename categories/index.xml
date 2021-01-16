@@ -5,7 +5,7 @@
     <link>/categories/</link>
       <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     <description>Categories</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2021</copyright><lastBuildDate>Wed, 22 Jan 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2021</copyright><lastBuildDate>Sat, 16 Jan 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/img/icon-192.png</url>
       <title>Categories</title>
@@ -13,17 +13,41 @@
     </image>
     
     <item>
+      <title>Concert hall acoustics</title>
+      <link>/categories/concert-hall-acoustics/</link>
+      <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>/categories/concert-hall-acoustics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Data analysis</title>
       <link>/categories/data-analysis/</link>
-      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
       <guid>/categories/data-analysis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Listening experiments</title>
+      <link>/categories/listening-experiments/</link>
+      <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>/categories/listening-experiments/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Perception</title>
+      <link>/categories/perception/</link>
+      <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>/categories/perception/</guid>
       <description></description>
     </item>
     
     <item>
       <title>R</title>
       <link>/categories/r/</link>
-      <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
       <guid>/categories/r/</guid>
       <description></description>
     </item>
