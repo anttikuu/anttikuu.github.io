@@ -2,23 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>classification | Antti Kuusinen</title>
-    <link>/tags/classification/</link>
-      <atom:link href="/tags/classification/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://anttikuusinen.github.io/tags/classification/</link>
+      <atom:link href="https://anttikuusinen.github.io/tags/classification/index.xml" rel="self" type="application/rss+xml" />
     <description>classification</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><copyright>©2021</copyright><lastBuildDate>Sat, 16 Jan 2021 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/img/icon-192.png</url>
+      <url>https://anttikuusinen.github.io/img/icon-192.png</url>
       <title>classification</title>
-      <link>/tags/classification/</link>
+      <link>https://anttikuusinen.github.io/tags/classification/</link>
     </image>
     
     <item>
       <title>On the recognition of concert halls by room acoustics - Results of the first online listening experiment.</title>
-      <link>/post/2021-16-01-onlinematching/2021-16-01-onlinematching/</link>
+      <link>https://anttikuusinen.github.io/post/2021-16-01-onlinematching/2021-16-01-onlinematching/</link>
       <pubDate>Sat, 16 Jan 2021 00:00:00 +0000</pubDate>
-      <guid>/post/2021-16-01-onlinematching/2021-16-01-onlinematching/</guid>
+      <guid>https://anttikuusinen.github.io/post/2021-16-01-onlinematching/2021-16-01-onlinematching/</guid>
       <description>
-&lt;script src=&#34;../../rmarkdown-libs/header-attrs/header-attrs.js&#34;&gt;&lt;/script&gt;
 
 
 &lt;!-- % This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see &lt;http://rmarkdown.rstudio.com&gt;. --&gt;
@@ -45,8 +44,8 @@ summary(chm_df)&lt;/code&gt;&lt;/pre&gt;
 ##  56IycUX:  32   1st Qu.: 8.75   1st Qu.: 8.75   MUSIC:640   1st Qu.: 0.00  
 ##  5QG    :  32   Median :16.50   Median :16.50               Median : 0.50  
 ##  5WsqUN :  32   Mean   :16.50   Mean   :16.50               Mean   : 4.25  
-##  aS9KGOn:  32   3rd Qu.:24.25   3rd Qu.:24.25               3rd Qu.: 8.25  
-##  b76J   :  32   Max.   :32.00   Max.   :32.00               Max.   :16.00  
+##  HAYtW  :  32   3rd Qu.:24.25   3rd Qu.:24.25               3rd Qu.: 8.25  
+##  HKzhS7 :  32   Max.   :32.00   Max.   :32.00               Max.   :16.00  
 ##  (Other):1088                                                              
 ##  SAMEDIFF     MUS_REF       MUS_COM    REF       A        B        C      
 ##  diff:640   BEE1  :320   BEE1   :320   AC:320   AC:301   AC:322   AC:317  
@@ -65,11 +64,11 @@ summary(chm_df)&lt;/code&gt;&lt;/pre&gt;
 ##                    Max.   :1.0000   2020-11-02 11:35:49:   1   Max.   :0  
 ##                                     (Other)            :1274              
 ##       REP             EXPERTICE             HEADPHONE  
-##  Min.   :0.00   experienced:512   AirPod Pro     : 32  
-##  1st Qu.:0.75   expert     :192   akg            : 32  
-##  Median :1.00   none       : 96   AKG 240DF      : 32  
-##  Mean   :0.75   novice     :416   AKG K240 Studio: 32  
-##  3rd Qu.:1.00   NA&amp;#39;s       : 64   AKG K501       : 32  
+##  Min.   :0.00   experienced:512   AKG 240DF      : 32  
+##  1st Qu.:0.75   expert     :192   AKG K240 Studio: 32  
+##  Median :1.00   none       : 96   AKG K501       : 32  
+##  Mean   :0.75   novice     :416   AKG801         : 32  
+##  3rd Qu.:1.00   NA&amp;#39;s       : 64   AirPod Pro     : 32  
 ##  Max.   :1.00                     (Other)        :800  
 ##                                   NA&amp;#39;s           :320&lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;(You can download this dataset &lt;a href=&#34;../../files/RSHINYresults.txt&#34; download&gt;here &lt;/a&gt;.)&lt;/p&gt;
@@ -135,9 +134,9 @@ summary(chm_df)&lt;/code&gt;&lt;/pre&gt;
     
     <item>
       <title>On the data analysis of perceptual matching of concert hall acoustics</title>
-      <link>/post/2020-22-01-chm/2020-22-01-chm/</link>
+      <link>https://anttikuusinen.github.io/post/2020-22-01-chm/2020-22-01-chm/</link>
       <pubDate>Wed, 22 Jan 2020 00:00:00 +0000</pubDate>
-      <guid>/post/2020-22-01-chm/2020-22-01-chm/</guid>
+      <guid>https://anttikuusinen.github.io/post/2020-22-01-chm/2020-22-01-chm/</guid>
       <description>
 
 
